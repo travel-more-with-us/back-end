@@ -6,8 +6,8 @@ class User(AbstractUser):
     PHONE_NUMBER_MAX_LENGTH = 15
 
     STATUS_CHOICES = (
-        'Tenant',
-        'Landlord',
+        ('Tenant', 'tenant'),
+        ('Landlord', 'landlord')
     )
 
     phone_number = models.CharField(max_length=PHONE_NUMBER_MAX_LENGTH)

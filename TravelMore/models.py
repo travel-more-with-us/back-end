@@ -35,6 +35,7 @@ class Booking(models.Model):
     number_of_guests = models.IntegerField()
     night_price = models.DecimalField(max_digits=8, decimal_places=2)
     total_price = models.DecimalField(max_digits=10, decimal_places=2, blank=True)
+    stay = models.ForeignKey(to=Stay, on_delete=models.CASCADE)
 
     def save(self, *args, **kwargs):
         self.calculate_total_price()
