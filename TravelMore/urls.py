@@ -1,9 +1,46 @@
-from django.urls import path
+from django.urls import path, include
+from rest_framework import routers
 
-from TravelMore import views
+from TravelMore.views import (
+    DestinationViewSet,
+    StayViewSet,
+    StayFramesViewSet,
+    AccommodationViewSet,
+    AccommodationFramesViewSet,
+    AddStarRatingDestinationViewSet,
+    AddStarRatingStayViewSet,
+    ReviewDestinationViewSet,
+    ReviewStayViewSet,
+    AmenityViewSet,
+    BookingViewSet,
+)
 
-urlpatterns = [
-    path('', views.homepage, name='homepage'),
-    path('destination/<int:destination_id>/', views.destination_page, name='destination_page'),
-    path('stay/<int:stay_id>/booking/', views.create_booking, name='create_booking'),
-]
+app_name = "TravelMore"
+
+router = routers.DefaultRouter()
+router.register("destinations", DestinationViewSet, basename="destinations")
+router.register("stays", StayViewSet, basename="stays")
+router.register("stay-frames", StayFramesViewSet, basename="stay-frames")
+router.register("accommodations", AccommodationViewSet, basename="accommodations")
+router.register("room-frames", AccommodationFramesViewSet, basename="room-frames")
+router.register("amenities", AmenityViewSet, basename="amenities")
+router.register(
+    "rating-destinations",
+    AddStarRatingDestinationViewSet,
+    basename="rating-destinations",
+)
+router.register(
+    "rating-stays",
+    AddStarRatingStayViewSet,
+    basename="rating-stays",
+)
+router.register(
+    "review-destinations", ReviewDestinationViewSet, basename="review-destinations"
+)
+router.register(
+    "review-stays", ReviewStayViewSet, basename="review-stays"
+)
+router.register("bookings", BookingViewSet, basename="bookings")
+
+
+urlpatterns = [path("", include(router.urls))]

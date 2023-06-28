@@ -201,6 +201,10 @@ class Accommodation(models.Model):
         max_length=100, choices=NUMBER_BEDS_CHOICES, default="SINGLE-BED"
     )
     image = models.ImageField(null=True, upload_to=room_image_file_path)
+    stay = models.ForeignKey(
+        Stay, on_delete=models.CASCADE, related_name="rooms", null=True, blank=True
+    )
+    amenities = models.ManyToManyField(Amenity, blank=True)
 
     def __str__(self):
         return self.name
