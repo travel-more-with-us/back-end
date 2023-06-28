@@ -95,7 +95,7 @@ class AccommodationFramesInline(admin.TabularInline):
             f"<img src={obj.image.url} width='130' height='100'"
         )
 
-    get_image.short_description = "Stay pictures"
+    get_image.short_description = "Room pictures"
 
 
 @admin.register(Accommodation)
@@ -138,7 +138,6 @@ class BookingAdmin(admin.ModelAdmin):
         "night_price",
         "total_price"
     )
-    readonly_fields = ("user",)
 
 
 @admin.register(ReviewStay)
