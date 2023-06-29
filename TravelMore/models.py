@@ -252,7 +252,7 @@ class Booking(models.Model):
         Stay, on_delete=models.CASCADE, related_name="booking_stay"
     )
     rooms = models.ForeignKey(
-        Accommodation, on_delete=models.CASCADE, related_name="booking_room"
+        Accommodation, on_delete=models.CASCADE, related_name="booking_room", null=True, blank=True
     )
 
     def save(self, *args, **kwargs):
