@@ -43,6 +43,17 @@ class UserSerializer(serializers.ModelSerializer):
         return representation
 
 
+class UserListSerializer(serializers.ModelSerializer):
+    full_name = serializers.SerializerMethodField()
+
+    class Meta:
+        model = get_user_model()
+        fields = ("full_name",)
+
+    def get_full_name(self, obj):
+        return obj.full_name
+
+
 class LoginSerializer(serializers.Serializer):
     email = serializers.EmailField()
     password = serializers.CharField(style={"input_type": "password"})

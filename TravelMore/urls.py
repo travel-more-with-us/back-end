@@ -20,10 +20,10 @@ app_name = "TravelMore"
 router = routers.DefaultRouter()
 router.register("destinations", DestinationViewSet, basename="destinations")
 router.register("stays", StayViewSet, basename="stays")
-router.register("stay-frames", StayFramesViewSet, basename="stay-frames")
 router.register("accommodations", AccommodationViewSet, basename="accommodations")
-router.register("room-frames", AccommodationFramesViewSet, basename="room-frames")
 router.register("amenities", AmenityViewSet, basename="amenities")
+router.register("stay-frames", StayFramesViewSet, basename="stay-frames")
+router.register("room-frames", AccommodationFramesViewSet, basename="room-frames")
 router.register(
     "rating-destinations",
     AddStarRatingDestinationViewSet,

@@ -117,13 +117,11 @@ class BookingAdmin(admin.ModelAdmin):
 @admin.register(ReviewStay)
 class ReviewStayAdmin(admin.ModelAdmin):
     list_display = ("id", "user", "stay")
-    readonly_fields = ("user",)
 
 
 @admin.register(ReviewDestination)
 class ReviewDestinationAdmin(admin.ModelAdmin):
     list_display = ("id", "user", "destination")
-    readonly_fields = ("user",)
 
 
 @admin.register(RatingStay)

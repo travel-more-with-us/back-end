@@ -1,4 +1,4 @@
-from django.db.models import Avg
+from django.db.models import Avg, F
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
 from rest_framework.response import Response
@@ -43,6 +43,7 @@ class DestinationViewSet(viewsets.ModelViewSet):
     queryset = (
         Destination.objects.annotate(
             average_rating=Avg("destination_rating__star__value"))
+        .annotate(avg_rating=F("average_rating"))
     )
     serializer_class = DestinationSerializer
     permission_classes = (IsAdminOrReadOnly,)
@@ -92,6 +93,7 @@ class StayViewSet(viewsets.ModelViewSet):
         Stay.objects.select_related("destination")
         .prefetch_related("amenities").annotate(
             average_rating=Avg("stay_rating__star__value"))
+        .annotate(avg_rating=F("average_rating"))
     )
     serializer_class = StaySerializer
     permission_classes = (IsAdminOrReadOnly,)

@@ -13,6 +13,7 @@ from TravelMore.models import (
     Accommodation,
     AccommodationFrames,
 )
+from user.serializers import UserListSerializer
 
 
 class AmenitySerializer(serializers.ModelSerializer):
@@ -136,6 +137,7 @@ class AccommodationListSerializer(serializers.ModelSerializer):
     amenities = serializers.SlugRelatedField(
         many=True, read_only=True, slug_field="name"
     )
+    stay = serializers.CharField(read_only=True, source="stay.name")
 
     class Meta:
         model = Accommodation
@@ -154,6 +156,7 @@ class AccommodationListSerializer(serializers.ModelSerializer):
 class AccommodationDetailSerializer(serializers.ModelSerializer):
     room_frames = AccommodationFramesListSerializer(many=True, read_only=True)
     amenities = AmenitySerializer(many=True, read_only=True)
+    stay = serializers.CharField(read_only=True, source="stay.name")
 
     class Meta:
         model = Accommodation
@@ -207,20 +210,20 @@ class StaySerializer(serializers.ModelSerializer):
 
 
 class StayListSerializer(serializers.ModelSerializer):
-    average_rating = serializers.DecimalField(
-        max_digits=3, decimal_places=1, read_only=True, coerce_to_string=False
-    )
+    avg_rating = serializers.IntegerField(read_only=True)
     reviews_count = serializers.SerializerMethodField()
+    name_destination = serializers.CharField(read_only=True, source="destination.name")
+    country_destination = serializers.CharField(read_only=True, source="destination.country")
 
     class Meta:
         model = Stay
         fields = (
             "id",
             "name",
-            "destination",
+            "name_destination",
+            "country_destination",
             "image",
-            "stay_rating",
-            "average_rating",
+            "avg_rating",
             "reviews_count"
         )
 
@@ -229,19 +232,20 @@ class StayListSerializer(serializers.ModelSerializer):
 
 
 class StayDetailSerializer(serializers.ModelSerializer):
-    reviews = ReviewStaySerializer(many=True, read_only=True)
+    review_stays = ReviewStaySerializer(many=True, read_only=True)
     rooms = AccommodationListSerializer(many=True, read_only=True)
     amenities = serializers.SlugRelatedField(
         many=True, read_only=True, slug_field="name"
     )
     stay_frames = StayFramesListSerializer(many=True, read_only=True)
+    country = serializers.CharField(read_only=True, source="destination.country")
 
     class Meta:
         model = Stay
         fields = (
             "id",
             "name",
-            "destination",
+            "country",
             "address",
             "image",
             "stay_frames",
@@ -249,7 +253,7 @@ class StayDetailSerializer(serializers.ModelSerializer):
             "rooms",
             "url_map_stay",
             "amenities",
-            "reviews"
+            "review_stays"
         )
 
 
@@ -274,9 +278,7 @@ class DestinationSerializer(serializers.ModelSerializer):
 
 
 class DestinationListSerializer(serializers.ModelSerializer):
-    average_rating = serializers.DecimalField(
-        max_digits=3, decimal_places=1, read_only=True, coerce_to_string=False
-    )
+    avg_rating = serializers.IntegerField(read_only=True)
     reviews_count = serializers.SerializerMethodField()
 
     class Meta:
@@ -286,7 +288,7 @@ class DestinationListSerializer(serializers.ModelSerializer):
             "name",
             "country",
             "image",
-            "average_rating",
+            "avg_rating",
             "reviews_count"
         )
 
@@ -295,8 +297,8 @@ class DestinationListSerializer(serializers.ModelSerializer):
 
 
 class DestinationDetailSerializer(serializers.ModelSerializer):
-    stays = StaySerializer(many=True, read_only=True)
-    reviews = ReviewDestinationSerializer(many=True, read_only=True)
+    stays = StayDetailSerializer(many=True, read_only=True)
+    review_destinations = ReviewDestinationSerializer(many=True, read_only=True)
 
     class Meta:
         model = Destination
@@ -308,7 +310,7 @@ class DestinationDetailSerializer(serializers.ModelSerializer):
             "description",
             "url_map_destination",
             "stays",
-            "reviews"
+            "review_destinations"
         )
 
 
@@ -339,6 +341,9 @@ class BookingSerializer(serializers.ModelSerializer):
 
 
 class BookingListSerializer(serializers.ModelSerializer):
+    user = UserListSerializer(read_only=True)
+    stay = StayListSerializer(read_only=True)
+    rooms = AccommodationListSerializer(read_only=True)
 
     class Meta:
         model = Booking
