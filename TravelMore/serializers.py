@@ -13,7 +13,6 @@ from TravelMore.models import (
     Accommodation,
     AccommodationFrames,
 )
-from user.serializers import UserListSerializer
 
 
 class AmenitySerializer(serializers.ModelSerializer):
@@ -342,7 +341,9 @@ class BookingSerializer(serializers.ModelSerializer):
 
 
 class BookingListSerializer(serializers.ModelSerializer):
-    user = UserListSerializer(read_only=True)
+    first_name = serializers.CharField(read_only=True, source="user.first_name")
+    last_name = serializers.CharField(read_only=True, source="user.last_name")
+    full_name = serializers.CharField(read_only=True, source="user.full_name")
     stay = StayListSerializer(read_only=True)
     rooms = AccommodationListSerializer(read_only=True)
 
@@ -350,7 +351,9 @@ class BookingListSerializer(serializers.ModelSerializer):
         model = Booking
         fields = (
             "id",
-            "user",
+            "first_name",
+            "last_name",
+            "full_name",
             "arrival_date",
             "departure_date",
             "number_of_guests",
