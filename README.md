@@ -1,5 +1,9 @@
 # Backend for travel website
 
+- Python3 must be already installed
+- Install PostgreSQL and create db
+- Docker should be installed
+
 
 You need to create `.env` file and add there the variables with your according values:
 - `POSTGRES_DB`: this is databases name;
@@ -20,10 +24,11 @@ Superuser credentials for test the functionality of this project:
 - password: `migratedpassword`.
 
 
-## Create token pair for user
+## Getting access
 
-Token page: `http://127.0.0.1:8000/user/token/` or 
-Login page: `http://127.0.0.1:8000/user/login/`
+- Create user via /user/signup/
+- Get access token via /user/token/ or 
+- Get access token via /user/login
 
 Enter:
 - email address: `migrated@admin.com`;
