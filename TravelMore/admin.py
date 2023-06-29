@@ -17,6 +17,28 @@ from TravelMore.models import (
 )
 
 
+class ImageAdminMixin:
+    readonly_fields = ("get_image",)
+
+    def get_image(self, obj):
+        return mark_safe(
+            f"<img src={obj.image.url} width='60' height='50'>"
+        )
+
+    get_image.short_description = "Image"
+
+
+class PictureAdminMixin:
+    readonly_fields = ("get_picture",)
+
+    def get_picture(self, obj):
+        return mark_safe(
+            f"<img src={obj.image.url} width='130' height='100'"
+        )
+
+    get_picture.short_description = "Extra pictures"
+
+
 class ReviewDestinationInline(admin.TabularInline):
     model = ReviewDestination
     extra = 1
@@ -24,18 +46,10 @@ class ReviewDestinationInline(admin.TabularInline):
 
 
 @admin.register(Destination)
-class DestinationAdmin(admin.ModelAdmin):
+class DestinationAdmin(ImageAdminMixin, admin.ModelAdmin):
     list_display = ("name", "country",)
     search_fields = ("name", "country")
     inlines = [ReviewDestinationInline]
-    readonly_fields = ("get_image",)
-
-    def get_image(self, obj):
-        return mark_safe(
-            f"<img src={obj.image.url} width='60' height='50'"
-        )
-
-    get_image.short_description = "Image"
 
 
 class ReviewStayInline(admin.TabularInline):
@@ -44,73 +58,33 @@ class ReviewStayInline(admin.TabularInline):
     readonly_fields = ("user", )
 
 
-class StayFramesInline(admin.TabularInline):
+class StayFramesInline(PictureAdminMixin, admin.TabularInline):
     model = StayFrames
     extra = 1
-    readonly_fields = ("get_image",)
-
-    def get_image(self, obj):
-        return mark_safe(
-            f"<img src={obj.image.url} width='130' height='100'"
-        )
-
-    get_image.short_description = "Stay pictures"
 
 
 @admin.register(Stay)
-class StayAdmin(admin.ModelAdmin):
+class StayAdmin(ImageAdminMixin, admin.ModelAdmin):
     list_display = ("name", "address", "destination",)
     search_fields = ("name", "country")
     inlines = [StayFramesInline, ReviewStayInline]
-    readonly_fields = ("get_image",)
-
-    def get_image(self, obj):
-        return mark_safe(
-            f"<img src={obj.image.url} width='60' height='50'"
-        )
-
-    get_image.short_description = "Image"
 
 
 @admin.register(StayFrames)
-class StayFramesAdmin(admin.ModelAdmin):
+class StayFramesAdmin(ImageAdminMixin, admin.ModelAdmin):
     list_display = ("title", "stays", "get_image")
-    readonly_fields = ("get_image",)
-
-    def get_image(self, obj):
-        return mark_safe(
-            f"<img src={obj.image.url} width='60' height='50'"
-        )
-
-    get_image.short_description = "Image"
 
 
-class AccommodationFramesInline(admin.TabularInline):
+class AccommodationFramesInline(PictureAdminMixin, admin.TabularInline):
     model = AccommodationFrames
     extra = 1
-    readonly_fields = ("get_image",)
-
-    def get_image(self, obj):
-        return mark_safe(
-            f"<img src={obj.image.url} width='130' height='100'"
-        )
-
-    get_image.short_description = "Room pictures"
 
 
 @admin.register(Accommodation)
-class AccommodationAdmin(admin.ModelAdmin):
+class AccommodationAdmin(ImageAdminMixin, admin.ModelAdmin):
     list_display = ("name", "type_room", "number_rooms", "number_beds", "get_image")
     search_fields = ("name", "type_room")
     inlines = [AccommodationFramesInline]
-    readonly_fields = ("get_image",)
-
-    def get_image(self, obj):
-        return mark_safe(
-            f"<img src={obj.image.url} width='60' height='50'"
-        )
-
-    get_image.short_description = "Image"
 
 
 @admin.register(AccommodationFrames)
