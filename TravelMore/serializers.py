@@ -148,6 +148,7 @@ class AccommodationListSerializer(serializers.ModelSerializer):
             "type_room",
             "number_rooms",
             "number_beds",
+            "night_price",
             "amenities",
             "image",
         )
@@ -167,6 +168,7 @@ class AccommodationDetailSerializer(serializers.ModelSerializer):
             "type_room",
             "number_rooms",
             "number_beds",
+            "night_price",
             "amenities",
             "image",
             "room_frames"
@@ -334,7 +336,6 @@ class BookingSerializer(serializers.ModelSerializer):
             "number_of_guests",
             "stay",
             "rooms",
-            "night_price",
             "total_price",
         )
         read_only_fields = ["total_price"]
@@ -355,6 +356,5 @@ class BookingListSerializer(serializers.ModelSerializer):
             "number_of_guests",
             "stay",
             "rooms",
-            "night_price",
             "total_price",
         )

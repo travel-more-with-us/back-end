@@ -200,6 +200,9 @@ class Accommodation(models.Model):
     number_beds = models.CharField(
         max_length=100, choices=NUMBER_BEDS_CHOICES, default="SINGLE-BED"
     )
+    night_price = models.DecimalField(
+        max_digits=8, decimal_places=2, null=True, blank=True
+    )
     image = models.ImageField(null=True, upload_to=room_image_file_path)
     stay = models.ForeignKey(
         Stay, on_delete=models.CASCADE, related_name="rooms", null=True, blank=True
@@ -244,7 +247,6 @@ class Booking(models.Model):
     arrival_date = models.DateField()
     departure_date = models.DateField()
     number_of_guests = models.IntegerField()
-    night_price = models.DecimalField(max_digits=8, decimal_places=2)
     total_price = models.DecimalField(max_digits=10, decimal_places=2, blank=True)
     stay = models.ForeignKey(
         Stay, on_delete=models.CASCADE, related_name="booking_stay"
@@ -259,7 +261,10 @@ class Booking(models.Model):
 
     def calculate_total_price(self):
         nights = (self.departure_date - self.arrival_date).days
-        self.total_price = self.night_price * nights
+
+        room_price = self.rooms.night_price
+
+        self.total_price = room_price * nights
 
     def __str__(self):
         return f"Booking for {self.number_of_guests} guests"

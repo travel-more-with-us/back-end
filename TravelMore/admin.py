@@ -109,7 +109,6 @@ class BookingAdmin(admin.ModelAdmin):
         "arrival_date",
         "departure_date",
         "number_of_guests",
-        "night_price",
         "total_price"
     )
 
