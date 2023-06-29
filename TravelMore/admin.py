@@ -21,9 +21,7 @@ class ImageAdminMixin:
     readonly_fields = ("get_image",)
 
     def get_image(self, obj):
-        return mark_safe(
-            f"<img src={obj.image.url} width='60' height='50'>"
-        )
+        return mark_safe(f"<img src={obj.image.url} width='60' height='50'>")
 
     get_image.short_description = "Image"
 
@@ -32,9 +30,7 @@ class PictureAdminMixin:
     readonly_fields = ("get_picture",)
 
     def get_picture(self, obj):
-        return mark_safe(
-            f"<img src={obj.image.url} width='130' height='100'"
-        )
+        return mark_safe(f"<img src={obj.image.url} width='130' height='100'")
 
     get_picture.short_description = "Extra pictures"
 
@@ -42,12 +38,15 @@ class PictureAdminMixin:
 class ReviewDestinationInline(admin.TabularInline):
     model = ReviewDestination
     extra = 1
-    readonly_fields = ("user", )
+    readonly_fields = ("user",)
 
 
 @admin.register(Destination)
 class DestinationAdmin(ImageAdminMixin, admin.ModelAdmin):
-    list_display = ("name", "country",)
+    list_display = (
+        "name",
+        "country",
+    )
     search_fields = ("name", "country")
     inlines = [ReviewDestinationInline]
 
@@ -55,7 +54,7 @@ class DestinationAdmin(ImageAdminMixin, admin.ModelAdmin):
 class ReviewStayInline(admin.TabularInline):
     model = ReviewStay
     extra = 1
-    readonly_fields = ("user", )
+    readonly_fields = ("user",)
 
 
 class StayFramesInline(PictureAdminMixin, admin.TabularInline):
@@ -65,7 +64,11 @@ class StayFramesInline(PictureAdminMixin, admin.TabularInline):
 
 @admin.register(Stay)
 class StayAdmin(ImageAdminMixin, admin.ModelAdmin):
-    list_display = ("name", "address", "destination",)
+    list_display = (
+        "name",
+        "address",
+        "destination",
+    )
     search_fields = ("name", "country")
     inlines = [StayFramesInline, ReviewStayInline]
 
@@ -82,22 +85,21 @@ class AccommodationFramesInline(PictureAdminMixin, admin.TabularInline):
 
 @admin.register(Accommodation)
 class AccommodationAdmin(ImageAdminMixin, admin.ModelAdmin):
-    list_display = ("name", "type_room", "number_rooms", "number_beds", "get_image")
+    list_display = (
+        "name",
+        "type_room",
+        "number_rooms",
+        "number_beds",
+        "night_price",
+        "get_image",
+    )
     search_fields = ("name", "type_room")
     inlines = [AccommodationFramesInline]
 
 
 @admin.register(AccommodationFrames)
-class AccommodationFramesAdmin(admin.ModelAdmin):
+class AccommodationFramesAdmin(ImageAdminMixin, admin.ModelAdmin):
     list_display = ("title", "rooms", "get_image")
-    readonly_fields = ("get_image",)
-
-    def get_image(self, obj):
-        return mark_safe(
-            f"<img src={obj.image.url} width='60' height='50'"
-        )
-
-    get_image.short_description = "Image"
 
 
 @admin.register(Booking)
@@ -109,7 +111,7 @@ class BookingAdmin(admin.ModelAdmin):
         "arrival_date",
         "departure_date",
         "number_of_guests",
-        "total_price"
+        "total_price",
     )
 
 
