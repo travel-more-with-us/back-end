@@ -88,6 +88,7 @@ class ReviewStaySerializer(serializers.ModelSerializer):
             "id",
             "user",
             "text",
+            "stay"
         )
 
 
@@ -100,6 +101,7 @@ class ReviewDestinationSerializer(serializers.ModelSerializer):
             "id",
             "user",
             "text",
+            "destination"
         )
 
 
