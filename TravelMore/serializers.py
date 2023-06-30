@@ -147,6 +147,7 @@ class AccommodationListSerializer(serializers.ModelSerializer):
             "type_room",
             "number_rooms",
             "number_beds",
+            "is_booked",
             "night_price",
             "amenities",
             "image",
@@ -167,6 +168,7 @@ class AccommodationDetailSerializer(serializers.ModelSerializer):
             "type_room",
             "number_rooms",
             "number_beds",
+            "is_booked",
             "night_price",
             "amenities",
             "image",
@@ -338,6 +340,40 @@ class BookingSerializer(serializers.ModelSerializer):
             "total_price",
         )
         read_only_fields = ["total_price"]
+
+    def validate(self, attrs):
+        data = super(BookingSerializer, self).validate(attrs=attrs)
+
+        if "stay" in attrs and "rooms" in attrs:
+            stay = attrs["stay"]
+            rooms = attrs["rooms"]
+
+            if rooms.stay != stay:
+                raise serializers.ValidationError(
+                    {"message": "I’m sorry, but there isn't this room in the selected hotel"}
+                )
+
+        stay = attrs["stay"]
+        rooms = attrs["rooms"]
+        arrival_date = attrs["arrival_date"]
+        departure_date = attrs["departure_date"]
+
+        existing_booking = Booking.objects.filter(
+            stay=stay,
+            rooms=rooms,
+            arrival_date__lte=departure_date,
+            departure_date__gte=arrival_date,
+            rooms__is_booked=True
+        ).first()
+
+        if existing_booking:
+            raise serializers.ValidationError(
+                {"message": "The room is already booked for the selected dates"}
+            )
+
+        attrs["rooms"].reset_booking_status()
+
+        return data
 
 
 class BookingListSerializer(serializers.ModelSerializer):

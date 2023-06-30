@@ -5,6 +5,7 @@ from django.conf import settings
 from django.db import models
 from django.utils.text import slugify
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.utils import timezone
 
 
 class Amenity(models.Model):
@@ -199,13 +200,27 @@ class Accommodation(models.Model):
     )
     image = models.ImageField(null=True, upload_to=room_image_file_path)
     stay = models.ForeignKey(
-        Stay, on_delete=models.CASCADE, related_name="rooms", null=True, blank=True
+        Stay,
+        on_delete=models.CASCADE,
+        related_name="accommodations",
+        null=True,
+        blank=True,
     )
     amenities = models.ManyToManyField(Amenity, blank=True)
     is_booked = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
+
+    def reset_booking_status(self):
+        now = timezone.now().date()
+        if self.booking_room.exclude(
+            departure_date__lt=now, rooms__is_booked=True
+        ).exists():
+            self.is_booked = True
+        else:
+            self.is_booked = False
+        self.save()
 
 
 def room_frames_image_file_path(instance, filename):
@@ -255,6 +270,7 @@ class Booking(models.Model):
     def save(self, *args, **kwargs):
         self.calculate_total_price()
         super().save(*args, **kwargs)
+        self.rooms.reset_booking_status()
 
     def calculate_total_price(self):
         nights = (self.departure_date - self.arrival_date).days
