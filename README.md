@@ -47,3 +47,8 @@ Superuser credentials for test the functionality of this project:
 Enter:
 - email address: `migrated@admin.com`;
 - password: `migratedpassword`.
+
+
+## Testing
+
+- Run tests using different approach: `docker-compose run app sh -c "python manage.py test"`;
