@@ -185,7 +185,7 @@ class Accommodation(models.Model):
         ("EIGHT-BED", "eight-bed"),
     )
 
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, unique=True)
     type_room = models.CharField(
         max_length=255, choices=TYPE_ROOM_CHOICES, default="STANDARD"
     )
