@@ -67,9 +67,7 @@ def stay_frames_image_file_path(instance, filename):
 
 class StayFrames(models.Model):
     title = models.CharField(max_length=255)
-    image = models.ImageField(
-        upload_to=stay_frames_image_file_path, null=True
-    )
+    image = models.ImageField(upload_to=stay_frames_image_file_path, null=True)
     stays = models.ForeignKey(
         Stay, on_delete=models.CASCADE, related_name="stay_frames"
     )
@@ -84,9 +82,7 @@ class StayFrames(models.Model):
 
 
 class RatingStar(models.Model):
-    value = models.IntegerField(
-        validators=[MinValueValidator(1), MaxValueValidator(5)]
-    )
+    value = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
 
     class Meta:
         ordering = ("-value",)
@@ -99,14 +95,12 @@ class RatingStay(models.Model):
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
-        related_name="user_rating_stay"
+        related_name="user_rating_stay",
     )
     star = models.ForeignKey(
         RatingStar, on_delete=models.CASCADE, related_name="star_rating_stay"
     )
-    stay = models.ForeignKey(
-        Stay, on_delete=models.CASCADE, related_name="stay_rating"
-    )
+    stay = models.ForeignKey(Stay, on_delete=models.CASCADE, related_name="stay_rating")
 
     def __str__(self):
         return f"{self.star} - {self.stay}"
@@ -116,7 +110,7 @@ class RatingDestination(models.Model):
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
-        related_name="user_rating_destination"
+        related_name="user_rating_destination",
     )
     star = models.ForeignKey(
         RatingStar, on_delete=models.CASCADE, related_name="star_rating_destination"
@@ -133,7 +127,7 @@ class ReviewStay(models.Model):
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
-        related_name="user_review_stay"
+        related_name="user_review_stay",
     )
     text = models.TextField(blank=True)
     stay = models.ForeignKey(
@@ -148,7 +142,7 @@ class ReviewDestination(models.Model):
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
-        related_name="user_review_destination"
+        related_name="user_review_destination",
     )
     text = models.TextField(blank=True)
     destination = models.ForeignKey(
@@ -170,14 +164,14 @@ class Accommodation(models.Model):
     TYPE_ROOM_CHOICES = (
         ("STANDARD", "standard"),
         ("JUNIOR SUITE", "junior suite"),
-        ("SUITE", "suite")
+        ("SUITE", "suite"),
     )
 
     NUMBER_ROOMS_CHOICES = (
         ("ONE ROOM", "one room"),
         ("TWO ROOM", "two room"),
         ("THREE ROOM", "three room"),
-        ("FOUR ROOM", "four room")
+        ("FOUR ROOM", "four room"),
     )
 
     NUMBER_BEDS_CHOICES = (
@@ -187,7 +181,7 @@ class Accommodation(models.Model):
         ("FOUR-BED", "four-bed"),
         ("FIVE-BED", "five-bed"),
         ("SIX-BED", "six-bed"),
-        ("EIGHT-BED", "eight-bed")
+        ("EIGHT-BED", "eight-bed"),
     )
 
     name = models.CharField(max_length=255)
@@ -208,6 +202,7 @@ class Accommodation(models.Model):
         Stay, on_delete=models.CASCADE, related_name="rooms", null=True, blank=True
     )
     amenities = models.ManyToManyField(Amenity, blank=True)
+    is_booked = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
@@ -222,9 +217,7 @@ def room_frames_image_file_path(instance, filename):
 
 class AccommodationFrames(models.Model):
     title = models.CharField(max_length=255)
-    image = models.ImageField(
-        upload_to=room_frames_image_file_path, null=True
-    )
+    image = models.ImageField(upload_to=room_frames_image_file_path, null=True)
     rooms = models.ForeignKey(
         Accommodation, on_delete=models.CASCADE, related_name="room_frames"
     )
@@ -252,7 +245,11 @@ class Booking(models.Model):
         Stay, on_delete=models.CASCADE, related_name="booking_stay"
     )
     rooms = models.ForeignKey(
-        Accommodation, on_delete=models.CASCADE, related_name="booking_room", null=True, blank=True
+        Accommodation,
+        on_delete=models.CASCADE,
+        related_name="booking_room",
+        null=True,
+        blank=True,
     )
 
     def save(self, *args, **kwargs):

@@ -91,6 +91,7 @@ class AccommodationAdmin(ImageAdminMixin, admin.ModelAdmin):
         "number_rooms",
         "number_beds",
         "night_price",
+        "is_booked",
         "get_image",
     )
     search_fields = ("name", "type_room")
