@@ -87,6 +87,7 @@ class AccommodationFramesInline(PictureAdminMixin, admin.TabularInline):
 class AccommodationAdmin(ImageAdminMixin, admin.ModelAdmin):
     list_display = (
         "name",
+        "stay",
         "type_room",
         "number_rooms",
         "number_beds",
