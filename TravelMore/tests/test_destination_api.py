@@ -6,13 +6,17 @@ from rest_framework import status
 from rest_framework.test import APIClient
 
 from TravelMore.models import Destination
-from TravelMore.serializers import DestinationDetailSerializer
+from TravelMore.serializers import (
+    DestinationListSerializer,
+    DestinationDetailSerializer,
+)
 
 
 DESTINATION_URL = reverse("TravelMore:destinations-list")
 
 
 def sample_destination(**params):
+
     defaults = {
         "name": "South",
         "country": "USA",
@@ -35,6 +39,18 @@ class UnauthenticatedDestinationApiTests(TestCase):
         response = self.client.get(DESTINATION_URL)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
+    def test_list_destinations(self):
+        sample_destination()
+        sample_destination()
+
+        response = self.client.get(DESTINATION_URL)
+
+        destinations = Destination.objects.all()
+        serializer = DestinationListSerializer(destinations, many=True)
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertNotEqual(response.data, serializer.data)
+
     def test_retrieve_destination_detail(self):
         destination = sample_destination()
 
@@ -45,6 +61,26 @@ class UnauthenticatedDestinationApiTests(TestCase):
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data, serializer.data)
+
+    def test_filter_destination_by_name(self):
+        destination = sample_destination()
+
+        response = self.client.get(DESTINATION_URL, {"name": "Place"})
+
+        serializer = DestinationListSerializer(destination)
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertNotIn(serializer.data, response.data)
+
+    def test_filter_destination_by_country(self):
+        destination = sample_destination()
+
+        response = self.client.get(DESTINATION_URL, {"name": "Canada"})
+
+        serializer = DestinationListSerializer(destination)
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertNotIn(serializer.data, response.data)
 
 
 class AuthenticatedDestinationApiTests(TestCase):

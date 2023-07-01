@@ -6,8 +6,7 @@ from rest_framework import status
 from rest_framework.test import APIClient
 
 from TravelMore.models import Stay, Destination
-from TravelMore.serializers import StayDetailSerializer
-
+from TravelMore.serializers import StayDetailSerializer, StayListSerializer
 
 STAY_URL = reverse("TravelMore:stays-list")
 
@@ -47,6 +46,18 @@ class UnauthenticatedStayApiTests(TestCase):
         response = self.client.get(STAY_URL)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
+    def test_list_stays(self):
+        sample_stay()
+        sample_stay()
+
+        response = self.client.get(STAY_URL)
+
+        stays = Stay.objects.all()
+        serializer = StayListSerializer(stays, many=True)
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertNotEqual(response.data, serializer.data)
+
     def test_retrieve_stay_detail(self):
         stay = sample_stay()
 
@@ -57,6 +68,16 @@ class UnauthenticatedStayApiTests(TestCase):
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data, serializer.data)
+
+    def test_filter_stay_by_name(self):
+        stay = sample_stay()
+
+        response = self.client.get(STAY_URL, {"name": "Standard"})
+
+        serializer = StayListSerializer(stay)
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertNotIn(serializer.data, response.data)
 
 
 class AuthenticatedStayApiTests(TestCase):
