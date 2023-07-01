@@ -252,7 +252,10 @@ class BookingViewSet(
 
     def get_queryset(self):
         user = self.request.user
-        return Booking.objects.filter(user=user).select_related("user", "stay", "rooms")
+        return (
+            Booking.objects.filter(user=user)
+            .select_related("user", "stay", "rooms")
+        )
 
     def get_serializer_class(self):
         if self.action == "list":

@@ -22,8 +22,12 @@ class AmenitySerializer(serializers.ModelSerializer):
 
 
 class RatingDestinationSerializer(serializers.ModelSerializer):
-    user = serializers.SlugRelatedField(slug_field="first_name", read_only=True)
-    star = serializers.SlugRelatedField(slug_field="value", read_only=True)
+    user = serializers.SlugRelatedField(
+        slug_field="first_name", read_only=True
+    )
+    star = serializers.SlugRelatedField(
+        slug_field="value", read_only=True
+    )
 
     class Meta:
         model = RatingDestination
@@ -51,8 +55,12 @@ class RatingDestinationCreateSerializer(serializers.ModelSerializer):
 
 
 class RatingStaySerializer(serializers.ModelSerializer):
-    user = serializers.SlugRelatedField(slug_field="first_name", read_only=True)
-    star = serializers.SlugRelatedField(slug_field="value", read_only=True)
+    user = serializers.SlugRelatedField(
+        slug_field="first_name", read_only=True
+    )
+    star = serializers.SlugRelatedField(
+        slug_field="value", read_only=True
+    )
 
     class Meta:
         model = RatingStay
@@ -80,7 +88,9 @@ class RatingStayCreateSerializer(serializers.ModelSerializer):
 
 
 class ReviewStaySerializer(serializers.ModelSerializer):
-    user = serializers.SlugRelatedField(slug_field="first_name", read_only=True)
+    user = serializers.SlugRelatedField(
+        slug_field="first_name", read_only=True
+    )
 
     class Meta:
         model = ReviewStay
@@ -93,7 +103,9 @@ class ReviewStaySerializer(serializers.ModelSerializer):
 
 
 class ReviewDestinationSerializer(serializers.ModelSerializer):
-    user = serializers.SlugRelatedField(slug_field="first_name", read_only=True)
+    user = serializers.SlugRelatedField(
+        slug_field="first_name", read_only=True
+    )
 
     class Meta:
         model = ReviewDestination
@@ -217,8 +229,12 @@ class StaySerializer(serializers.ModelSerializer):
 class StayListSerializer(serializers.ModelSerializer):
     avg_rating = serializers.IntegerField(read_only=True)
     reviews_count = serializers.SerializerMethodField()
-    name_destination = serializers.CharField(read_only=True, source="destination.name")
-    country_destination = serializers.CharField(read_only=True, source="destination.country")
+    name_destination = serializers.CharField(
+        read_only=True, source="destination.name"
+    )
+    country_destination = serializers.CharField(
+        read_only=True, source="destination.country"
+    )
 
     class Meta:
         model = Stay
@@ -243,7 +259,9 @@ class StayDetailSerializer(serializers.ModelSerializer):
         many=True, read_only=True, slug_field="name"
     )
     stay_frames = StayFramesListSerializer(many=True, read_only=True)
-    country = serializers.CharField(read_only=True, source="destination.country")
+    country = serializers.CharField(
+        read_only=True, source="destination.country"
+    )
 
     class Meta:
         model = Stay
@@ -303,7 +321,9 @@ class DestinationListSerializer(serializers.ModelSerializer):
 
 class DestinationDetailSerializer(serializers.ModelSerializer):
     stays = StayDetailSerializer(many=True, read_only=True)
-    review_destinations = ReviewDestinationSerializer(many=True, read_only=True)
+    review_destinations = ReviewDestinationSerializer(
+        many=True, read_only=True
+    )
 
     class Meta:
         model = Destination
@@ -352,7 +372,11 @@ class BookingSerializer(serializers.ModelSerializer):
 
             if rooms.stay != stay:
                 raise serializers.ValidationError(
-                    {"message": "I’m sorry, but there isn't this room in the selected hotel"}
+                    {
+                        "message":
+                        "I’m sorry, but there isn't "
+                        "this room in the selected hotel"
+                    }
                 )
 
         stay = attrs["stay"]
@@ -370,7 +394,10 @@ class BookingSerializer(serializers.ModelSerializer):
 
         if existing_booking:
             raise serializers.ValidationError(
-                {"message": "The room is already booked for the selected dates"}
+                {
+                    "message":
+                    "The room is already booked for the selected dates"
+                }
             )
 
         attrs["rooms"].reset_booking_status()
@@ -379,9 +406,15 @@ class BookingSerializer(serializers.ModelSerializer):
 
 
 class BookingListSerializer(serializers.ModelSerializer):
-    first_name = serializers.CharField(read_only=True, source="user.first_name")
-    last_name = serializers.CharField(read_only=True, source="user.last_name")
-    full_name = serializers.CharField(read_only=True, source="user.full_name")
+    first_name = serializers.CharField(
+        read_only=True, source="user.first_name"
+    )
+    last_name = serializers.CharField(
+        read_only=True, source="user.last_name"
+    )
+    full_name = serializers.CharField(
+        read_only=True, source="user.full_name"
+    )
     stay = StayListSerializer(read_only=True)
     rooms = AccommodationListSerializer(read_only=True)
 

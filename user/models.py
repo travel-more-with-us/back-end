@@ -41,14 +41,19 @@ class UserManager(BaseUserManager):
 class User(AbstractUser):
     phoneNumberRegex = RegexValidator(regex=r"^\+?\d{8,15}$")
 
-    STATUS_CHOICES = (("Tenant", "tenant"), ("Landlord", "landlord"))
+    STATUS_CHOICES = (
+        ("Tenant", "tenant"),
+        ("Landlord", "landlord")
+    )
 
     email = models.EmailField(_("email address"), unique=True)
     phone_number = models.CharField(
         max_length=16, validators=[phoneNumberRegex], unique=True
     )
     residency = models.CharField(max_length=63, blank=True)
-    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default="tenant")
+    status = models.CharField(
+        max_length=10, choices=STATUS_CHOICES, default="tenant"
+    )
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []

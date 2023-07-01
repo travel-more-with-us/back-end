@@ -18,12 +18,30 @@ from TravelMore.views import (
 app_name = "TravelMore"
 
 router = routers.DefaultRouter()
-router.register("destinations", DestinationViewSet, basename="destinations")
-router.register("stays", StayViewSet, basename="stays")
-router.register("accommodations", AccommodationViewSet, basename="accommodations")
-router.register("amenities", AmenityViewSet, basename="amenities")
-router.register("stay-frames", StayFramesViewSet, basename="stay-frames")
-router.register("room-frames", AccommodationFramesViewSet, basename="room-frames")
+router.register(
+    "destinations",
+    DestinationViewSet,
+    basename="destinations"
+)
+router.register(
+    "stays", StayViewSet, basename="stays"
+)
+router.register(
+    "accommodations",
+    AccommodationViewSet,
+    basename="accommodations"
+)
+router.register(
+    "amenities", AmenityViewSet, basename="amenities"
+)
+router.register(
+    "stay-frames", StayFramesViewSet, basename="stay-frames"
+)
+router.register(
+    "room-frames",
+    AccommodationFramesViewSet,
+    basename="room-frames"
+)
 router.register(
     "rating-destinations",
     AddStarRatingDestinationViewSet,
@@ -35,12 +53,16 @@ router.register(
     basename="rating-stays",
 )
 router.register(
-    "review-destinations", ReviewDestinationViewSet, basename="review-destinations"
+    "review-destinations",
+    ReviewDestinationViewSet,
+    basename="review-destinations"
 )
 router.register(
     "review-stays", ReviewStayViewSet, basename="review-stays"
 )
-router.register("bookings", BookingViewSet, basename="bookings")
+router.register(
+    "bookings", BookingViewSet, basename="bookings"
+)
 
 
 urlpatterns = [path("", include(router.urls))]

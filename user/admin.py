@@ -6,9 +6,14 @@ from user.models import User
 
 @admin.register(User)
 class UserAdmin(UserAdmin):
-    list_display = UserAdmin.list_display + ("phone_number", "residency", "status")
+    list_display = (
+        UserAdmin.list_display + ("phone_number", "residency", "status")
+    )
     fieldsets = UserAdmin.fieldsets + (
-        (("Additional info", {"fields": ("phone_number", "residency", "status")}),)
+        (
+            ("Additional info",
+             {"fields": ("phone_number", "residency", "status")}),
+        )
     )
     add_fieldsets = UserAdmin.add_fieldsets + (
         (

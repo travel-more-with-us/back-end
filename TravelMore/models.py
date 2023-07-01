@@ -83,7 +83,9 @@ class StayFrames(models.Model):
 
 
 class RatingStar(models.Model):
-    value = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
+    value = models.IntegerField(
+        validators=[MinValueValidator(1), MaxValueValidator(5)]
+    )
 
     class Meta:
         ordering = ("-value",)
@@ -101,7 +103,9 @@ class RatingStay(models.Model):
     star = models.ForeignKey(
         RatingStar, on_delete=models.CASCADE, related_name="star_rating_stay"
     )
-    stay = models.ForeignKey(Stay, on_delete=models.CASCADE, related_name="stay_rating")
+    stay = models.ForeignKey(
+        Stay, on_delete=models.CASCADE, related_name="stay_rating"
+    )
 
     def __str__(self):
         return f"{self.star} - {self.stay}"
@@ -114,10 +118,14 @@ class RatingDestination(models.Model):
         related_name="user_rating_destination",
     )
     star = models.ForeignKey(
-        RatingStar, on_delete=models.CASCADE, related_name="star_rating_destination"
+        RatingStar,
+        on_delete=models.CASCADE,
+        related_name="star_rating_destination"
     )
     destination = models.ForeignKey(
-        Destination, on_delete=models.CASCADE, related_name="destination_rating"
+        Destination,
+        on_delete=models.CASCADE,
+        related_name="destination_rating"
     )
 
     def __str__(self):
@@ -147,7 +155,9 @@ class ReviewDestination(models.Model):
     )
     text = models.TextField(blank=True)
     destination = models.ForeignKey(
-        Destination, on_delete=models.CASCADE, related_name="review_destinations"
+        Destination,
+        on_delete=models.CASCADE,
+        related_name="review_destinations"
     )
 
     def __str__(self):
@@ -255,7 +265,9 @@ class Booking(models.Model):
     arrival_date = models.DateField()
     departure_date = models.DateField()
     number_of_guests = models.IntegerField()
-    total_price = models.DecimalField(max_digits=10, decimal_places=2, blank=True)
+    total_price = models.DecimalField(
+        max_digits=10, decimal_places=2, blank=True
+    )
     stay = models.ForeignKey(
         Stay, on_delete=models.CASCADE, related_name="booking_stay"
     )
