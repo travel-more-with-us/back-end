@@ -5,7 +5,7 @@ from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APIClient
 
-from TravelMore.models import Accommodation, Destination, Stay
+from TravelMore.models import Accommodation, Destination, Stay, Amenity
 from TravelMore.serializers import (
     AccommodationListSerializer,
     AccommodationDetailSerializer
@@ -98,6 +98,30 @@ class UnauthenticatedAccommodationApiTests(TestCase):
         self.assertIn(serializer2.data, response.data)
         self.assertIn(serializer3.data, response.data)
 
+    def test_filter_accommodations_by_amenities(self):
+        amenity1 = Amenity.objects.create(name="Wi-Fi")
+        amenity2 = Amenity.objects.create(name="WC")
+
+        room1 = sample_accommodation(name="Room 1")
+        room2 = sample_accommodation(name="Room 2")
+
+        room1.amenities.add(amenity1)
+        room2.amenities.add(amenity2)
+
+        room3 = sample_accommodation(name="Room without amenities")
+
+        response = self.client.get(
+            ACCOMMODATION_URL, {"amenities": f"{amenity1.id},{amenity2.id}"}
+        )
+
+        serializer1 = AccommodationListSerializer(room1)
+        serializer2 = AccommodationListSerializer(room2)
+        serializer3 = AccommodationListSerializer(room3)
+
+        self.assertIn(serializer1.data, response.data)
+        self.assertIn(serializer2.data, response.data)
+        self.assertNotIn(serializer3.data, response.data)
+
 
 class AuthenticatedAccommodationApiTests(TestCase):
 
@@ -150,3 +174,24 @@ class AdminAccommodationApiTests(TestCase):
                 self.assertEqual(payload[key], getattr(room, key).id)
             else:
                 self.assertEqual(payload[key], getattr(room, key))
+
+    def test_create_accommodation_with_amenities(self):
+        stay = sample_stay()
+        amenity1 = Amenity.objects.create(name="Wi-Fi")
+        amenity2 = Amenity.objects.create(name="WC")
+
+        payload = {
+            "name": "Hotel",
+            "stay": stay.id,
+            "amenities": [amenity1.id, amenity2.id],
+        }
+        response = self.client.post(ACCOMMODATION_URL, payload)
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+
+        room = Accommodation.objects.get(id=response.data["id"])
+
+        amenities = room.amenities.all()
+
+        self.assertEqual(amenities.count(), 2)
+        self.assertIn(amenity1, amenities)
+        self.assertIn(amenity2, amenities)
