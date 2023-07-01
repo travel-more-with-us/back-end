@@ -52,3 +52,4 @@ Enter:
 ## Testing
 
 - Run tests using different approach: `docker-compose run app sh -c "python manage.py test"`;
+- If needed, also check the flake8: `docker-compose run app sh -c "flake8"`.
