@@ -53,6 +53,7 @@ class DestinationViewSet(viewsets.ModelViewSet):
     permission_classes = (IsAdminOrReadOnly,)
 
     def get_queryset(self):
+        """Retrieve the destinations with filters"""
         name = self.request.query_params.get("name")
         country = self.request.query_params.get("country")
         queryset = super().get_queryset()
@@ -106,6 +107,7 @@ class StayViewSet(viewsets.ModelViewSet):
     permission_classes = (IsAdminOrReadOnly,)
 
     def get_queryset(self):
+        """Retrieve the stays with filters"""
         name = self.request.query_params.get("name")
         queryset = super().get_queryset()
 
@@ -157,14 +159,25 @@ class AccommodationViewSet(viewsets.ModelViewSet):
     serializer_class = AccommodationSerializer
     permission_classes = (IsAdminOrReadOnly,)
 
+    @staticmethod
+    def _params_to_ints(qs):
+        """Converts a list of string IDs to a list of integers"""
+        return [int(str_id) for str_id in qs.split(",")]
+
     def get_queryset(self):
+        """Retrieve the accommodations with filters"""
         name = self.request.query_params.get("name")
+        amenities = self.request.query_params.get("amenities")
         queryset = super().get_queryset()
 
         if name:
             queryset = queryset.filter(name__icontains=name)
 
-        return queryset
+        if amenities:
+            amenities_ids = self._params_to_ints(amenities)
+            queryset = queryset.filter(amenities__id__in=amenities_ids)
+
+        return queryset.distinct()
 
     def get_serializer_class(self):
         if self.action == "list":
