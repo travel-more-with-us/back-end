@@ -28,6 +28,9 @@ Docker should be installed
 - Create new admin user. Enter container `docker exec -it <container_name> bash`, and create in from there;
 
 
+### Checking the endpoints functionality
+- You can see detailed APIs at swagger page: via /api/doc/swagger/
+
   
 ## Check project functionality
 
@@ -41,7 +44,7 @@ Superuser credentials for test the functionality of this project:
 ## Getting access
 
 - Create user via /user/signup/
-- Get access token via /user/token/ or 
+- Get access token via /user/token/ 
 - Get access token via /user/login
 
 Enter:
