@@ -227,7 +227,7 @@ class StaySerializer(serializers.ModelSerializer):
 
 
 class StayListSerializer(serializers.ModelSerializer):
-    avg_rating = serializers.IntegerField(read_only=True)
+    average_rating = serializers.IntegerField(read_only=True)
     reviews_count = serializers.SerializerMethodField()
     name_destination = serializers.CharField(
         read_only=True, source="destination.name"
@@ -244,7 +244,7 @@ class StayListSerializer(serializers.ModelSerializer):
             "name_destination",
             "country_destination",
             "image",
-            "avg_rating",
+            "average_rating",
             "reviews_count"
         )
 
@@ -301,7 +301,7 @@ class DestinationSerializer(serializers.ModelSerializer):
 
 
 class DestinationListSerializer(serializers.ModelSerializer):
-    avg_rating = serializers.IntegerField(read_only=True)
+    average_rating = serializers.IntegerField(read_only=True)
     reviews_count = serializers.SerializerMethodField()
 
     class Meta:
@@ -311,7 +311,7 @@ class DestinationListSerializer(serializers.ModelSerializer):
             "name",
             "country",
             "image",
-            "avg_rating",
+            "average_rating",
             "reviews_count"
         )
 
