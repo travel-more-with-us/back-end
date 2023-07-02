@@ -1,5 +1,11 @@
 # Backend for travel website
 
+"""
+Do you like travelling? Do you like resting with a comfort? Welcome to TravelMore!
+API service for choosing of travel places, stay places and booking accommodations written on DRF.
+"""
+
+
 - Python3 must be already installed
 - Install PostgreSQL and create db
 
@@ -28,10 +34,62 @@ Docker should be installed
 - Create new admin user. Enter container `docker exec -it <container_name> bash`, and create in from there;
 
 
+
+## Features
+
+- JWT authentication;
+- Admin panel /admin/;
+- Documentation is located at /api/doc/swagger/;
+- Creating amenity, destination, stays (only admin);
+- Creating accommodation with amenities (only admin);
+- Filtering accommodation by name, amenities;
+- Filtering destinations by name & country;
+- Filtering stays by name;
+- Adding rating to destinations and stays (authenticated user);
+- Leaving reviews to destinations and stays (authenticated user);
+
+
+### What do APIs do
+
+- [GET] /destinations/ - obtains a list of destinations with the possibility of filtering by name, country;
+- [GET] /stays/ - obtains a list of stays with the possibility of filtering by name;
+- [GET] /accommodations/ - obtains a list of accommodations with the possibility of filtering by name, amenities;
+
+- [GET] /destinations/id/ - obtains the specific destination information data;
+- [GET] /stays/id/ - obtains the specific stay data;
+- [GET] /accommodations/id/ - obtains the specific accommodation data;
+
+- [GET] /bookings/ - receives the bookings history for the current user;
+
+- [POST] /destinations/ - creates a destination;
+- [POST] /stays/ - creates a stay;
+- [POST] /accommodations/ - creates an accommodation;
+- [POST] /amenities/ - creates an amenity;
+- [POST] /stay-frames/ - adds frames to stays;
+- [POST] /room-frames/ - adds frames to accommodations;
+- [POST] /rating-destinations/ - adds rating to destinations;
+- [POST] /rating-stays/ - adds rating to stays;
+- [POST] /review-destinations/ - adds reviews to destinations;
+- [POST] /review-stays/ - adds reviews to stays;
+- [POST] /bookings/ - creates booking of accommodations;
+
+
+- [GET] /user/me/ - obtains the specific user information data;
+
+- [POST] /user/signup/ - creates new users;
+- [POST] /user/login/ - an user authorization, obtains an access token;
+- [POST] /user/token/ - creates token pair for user;
+- [POST] /user/token/refresh/ - gets new access token for user by refresh token;
+
+- [PUT] /user/me/ - updates user data;
+
+
+
 ### Checking the endpoints functionality
 - You can see detailed APIs at swagger page: via /api/doc/swagger/
 
   
+
 ## Check project functionality
 
 - Note: after running project you need to set values to RatingStar model through admin panel(e.g. 1, 2, 3, 4, 5)
