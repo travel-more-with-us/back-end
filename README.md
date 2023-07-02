@@ -1,7 +1,7 @@
 # Backend for travel website
 
 """
-Do you like travelling? Do you like resting with a comfort? Welcome to TravelMore!
+Do you like travelling? Do you like resting with comfort? Welcome to TravelMore!
 API service for choosing of travel places, stay places and booking accommodations written on DRF.
 """
 
