@@ -1,3 +1,4 @@
+pip~=23.1.2
 asgiref==3.7.2
 attrs==23.1.0
 Django==4.2.2
