@@ -1,38 +1,254 @@
 [
-    {
-        "model": "TravelMore.stayframes",
-        "pk": 1,
-        "fields": {
-            "title": "Deluxe Room",
-            "image": "stay_frames/deluxe-room.jpg",
-            "stays": 1
-        }
-    },
-    {
-        "model": "TravelMore.stayframes",
-        "pk": 2,
-        "fields": {
-            "title": "Ocean View Suite",
-            "image": "stay_frames/ocean-view-suite.jpg",
-            "stays": 1
-        }
-    },
-    {
-        "model": "TravelMore.stayframes",
-        "pk": 3,
-        "fields": {
-            "title": "Family Suite",
-            "image": "stay_frames/family-suite.jpg",
-            "stays": 2
-        }
-    },
-    {
-        "model": "TravelMore.stayframes",
-        "pk": 4,
-        "fields": {
-            "title": "Executive Suite",
-            "image": "stay_frames/executive-suite.jpg",
-            "stays": 2
-        }
+  {
+    "model": "TravelMore.stayframes",
+    "pk": 1,
+    "fields": {
+      "title": "Casa Verde 1",
+      "image": "stay_frames_images/CasaVerde1.png",
+      "stays": 1
     }
+  },
+  {
+    "model": "TravelMore.stayframes",
+    "pk": 2,
+    "fields": {
+      "title": "Casa Verde 2",
+      "image": "stay_frames_images/CasaVerde2.png",
+      "stays": 1
+    }
+  },
+  {
+    "model": "TravelMore.stayframes",
+    "pk": 3,
+    "fields": {
+      "title": "Casa Verde 3",
+      "image": "stay_frames_images/CasaVerde3.png",
+      "stays": 1
+    }
+  },
+  {
+    "model": "TravelMore.stayframes",
+    "pk": 4,
+    "fields": {
+      "title": "Casa Verde 4",
+      "image": "stay_frames_images/CasaVerde4.png",
+      "stays": 1
+    }
+  },
+  {
+    "model": "TravelMore.stayframes",
+    "pk": 5,
+    "fields": {
+      "title": "Dicmo Home 1",
+      "image": "stay_frames_images/DicmoHome1.png",
+      "stays": 3
+    }
+  },
+  {
+    "model": "TravelMore.stayframes",
+    "pk": 6,
+    "fields": {
+      "title": "Dicmo Home 2",
+      "image": "stay_frames_images/DicmoHome2.png",
+      "stays": 3
+    }
+  },
+  {
+    "model": "TravelMore.stayframes",
+    "pk": 7,
+    "fields": {
+      "title": "Dicmo Home 3",
+      "image": "stay_frames_images/DicmoHome3.png",
+      "stays": 3
+    }
+  },
+  {
+    "model": "TravelMore.stayframes",
+    "pk": 8,
+    "fields": {
+      "title": "Dicmo Home 4",
+      "image": "stay_frames_images/DicmoHome4.png",
+      "stays": 3
+    }
+  },
+  {
+    "model": "TravelMore.stayframes",
+    "pk": 9,
+    "fields": {
+      "title": "Holiday Home 1",
+      "image": "stay_frames_images/HolidayHome1.png",
+      "stays": 2
+    }
+  },
+  {
+    "model": "TravelMore.stayframes",
+    "pk": 10,
+    "fields": {
+      "title": "Holiday Home 2",
+      "image": "stay_frames_images/HolidayHome2.png",
+      "stays": 2
+    }
+  },
+  {
+    "model": "TravelMore.stayframes",
+    "pk": 11,
+    "fields": {
+      "title": "Holiday Home 3",
+      "image": "stay_frames_images/HolidayHome3.png",
+      "stays": 2
+    }
+  },
+  {
+    "model": "TravelMore.stayframes",
+    "pk": 12,
+    "fields": {
+      "title": "Holiday Home 4",
+      "image": "stay_frames_images/HolidayHome4.png",
+      "stays": 2
+    }
+  },
+  {
+    "model": "TravelMore.stayframes",
+    "pk": 13,
+    "fields": {
+      "title": "Luxury Villa Bachin 1",
+      "image": "stay_frames_images/LuxuryVillaBachin1.png",
+      "stays": 4
+    }
+  },
+  {
+    "model": "TravelMore.stayframes",
+    "pk": 14,
+    "fields": {
+      "title": "Luxury Villa Bachin 2",
+      "image": "stay_frames_images/LuxuryVillaBachin2.png",
+      "stays": 4
+    }
+  },
+  {
+    "model": "TravelMore.stayframes",
+    "pk": 15,
+    "fields": {
+      "title": "Luxury Villa Bachin 3",
+      "image": "stay_frames_images/LuxuryVillaBachin3.png",
+      "stays": 4
+    }
+  },
+  {
+    "model": "TravelMore.stayframes",
+    "pk": 16,
+    "fields": {
+      "title": "Luxury Villa Bachin 4",
+      "image": "stay_frames_images/LuxuryVillaBachin4.png",
+      "stays": 4
+    }
+  },
+  {
+    "model": "TravelMore.stayframes",
+    "pk": 17,
+    "fields": {
+      "title": "Miriam Kastela 1",
+      "image": "stay_frames_images/MiriamKastela1.png",
+      "stays": 5
+    }
+  },
+  {
+    "model": "TravelMore.stayframes",
+    "pk": 18,
+    "fields": {
+      "title": "Miriam Kastela 2",
+      "image": "stay_frames_images/MiriamKastela2.png",
+      "stays": 5
+    }
+  },
+  {
+    "model": "TravelMore.stayframes",
+    "pk": 19,
+    "fields": {
+      "title": "Miriam Kastela 3",
+      "image": "stay_frames_images/MiriamKastela3.png",
+      "stays": 5
+    }
+  },
+  {
+    "model": "TravelMore.stayframes",
+    "pk": 20,
+    "fields": {
+      "title": "Miriam Kastela 4",
+      "image": "stay_frames_images/MiriamKastela4.png",
+      "stays": 5
+    }
+  },
+  {
+    "model": "TravelMore.stayframes",
+    "pk": 21,
+    "fields": {
+      "title": "Villa Antica 1",
+      "image": "stay_frames_images/VillaAntica1.png",
+      "stays": 6
+    }
+  },
+  {
+    "model": "TravelMore.stayframes",
+    "pk": 22,
+    "fields": {
+      "title": "Villa Antica 2",
+      "image": "stay_frames_images/VillaAntica2.png",
+      "stays": 6
+    }
+  },
+  {
+    "model": "TravelMore.stayframes",
+    "pk": 23,
+    "fields": {
+      "title": "Villa Antica 3",
+      "image": "stay_frames_images/VillaAntica3.png",
+      "stays": 6
+    }
+  },
+  {
+    "model": "TravelMore.stayframes",
+    "pk": 24,
+    "fields": {
+      "title": "Villa Antica 4",
+      "image": "stay_frames_images/VillaAntica4.png",
+      "stays": 6
+    }
+  },
+  {
+    "model": "TravelMore.stayframes",
+    "pk": 25,
+    "fields": {
+      "title": "Villa Slika 1",
+      "image": "stay_frames_images/VillaSlika1.png",
+      "stays": 7
+    }
+  },
+  {
+    "model": "TravelMore.stayframes",
+    "pk": 26,
+    "fields": {
+      "title": "Villa Slika 2",
+      "image": "stay_frames_images/VillaSlika2.png",
+      "stays": 7
+    }
+  },
+  {
+    "model": "TravelMore.stayframes",
+    "pk": 27,
+    "fields": {
+      "title": "Villa Slika 3",
+      "image": "stay_frames_images/VillaSlika3.png",
+      "stays": 7
+    }
+  },
+  {
+    "model": "TravelMore.stayframes",
+    "pk": 28,
+    "fields": {
+      "title": "Villa Slika 4",
+      "image": "stay_frames_images/VillaSlika4.png",
+      "stays": 7
+    }
+  }
 ]

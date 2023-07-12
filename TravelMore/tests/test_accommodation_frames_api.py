@@ -6,7 +6,7 @@ from rest_framework import status
 from rest_framework.test import APIClient
 
 from TravelMore.models import (
-    AccommodationFrames, Destination, Stay, Accommodation
+    Destination, Stay, Accommodation
 )
 
 
@@ -45,18 +45,6 @@ def sample_accommodation(**params):
     defaults.update(params)
 
     return Accommodation.objects.create(**defaults)
-
-
-def sample_accommodation_frame(**params):
-    rooms = sample_accommodation()
-
-    defaults = {
-        "title": "Sample room frame",
-        "rooms": rooms
-    }
-    defaults.update(params)
-
-    return AccommodationFrames.objects.create(**defaults)
 
 
 class UnauthenticatedAccommodationFrameApiTests(TestCase):
@@ -101,26 +89,3 @@ class AdminAccommodationFrameApiTests(TestCase):
             is_staff=True
         )
         self.client.force_authenticate(self.user)
-
-    def test_create_accommodation_frame(self):
-        rooms_frames = sample_accommodation_frame()
-        room = sample_accommodation(name="Standard_2")
-
-        payload = {
-            "title": rooms_frames.title,
-            "rooms": room.id,
-        }
-
-        response = self.client.post(ACCOMMODATION_FRAME_URL, payload)
-
-        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-
-        frame = AccommodationFrames.objects.get(
-            title=response.data["title"], rooms=room.id
-        )
-
-        for key in payload:
-            if key == "rooms":
-                self.assertEqual(int(payload[key]), getattr(frame, key).id)
-            else:
-                self.assertEqual(payload[key], str(getattr(frame, key)))

@@ -6,7 +6,6 @@ from django.db import models
 from django.utils.text import slugify
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.utils import timezone
-from storages.backends.gcloud import GoogleCloudStorage
 from django.conf import settings
 
 
@@ -25,7 +24,7 @@ class Destination(models.Model):
     name = models.CharField(max_length=63)
     country = models.CharField(max_length=63)
     description = models.TextField(blank=True)
-    image = models.ImageField(null=True, upload_to="destination_images", storage=GoogleCloudStorage())
+    image = models.ImageField(null=True,)
     url_map_destination = models.URLField(max_length=255, blank=True)
 
     def __str__(self):
@@ -36,7 +35,7 @@ class Stay(models.Model):
     name = models.CharField(max_length=63)
     description = models.TextField(blank=True)
     address = models.CharField(max_length=100, blank=True)
-    image = models.ImageField(null=True, upload_to="stay_images", storage=GoogleCloudStorage())
+    image = models.ImageField(null=True,)
     url_map_stay = models.URLField(max_length=255, blank=True)
     destination = models.ForeignKey(
         Destination, on_delete=models.CASCADE, related_name="stays"
@@ -49,7 +48,7 @@ class Stay(models.Model):
 
 class StayFrames(models.Model):
     title = models.CharField(max_length=255)
-    image = models.ImageField(null=True, upload_to="stay_frames_images", storage=GoogleCloudStorage())
+    image = models.ImageField(null=True)
     stays = models.ForeignKey(
         Stay, on_delete=models.CASCADE, related_name="stay_frames"
     )
@@ -182,7 +181,7 @@ class Accommodation(models.Model):
     night_price = models.DecimalField(
         max_digits=8, decimal_places=2, null=True, blank=True
     )
-    image = models.ImageField(null=True, upload_to="accommodation_images", storage=GoogleCloudStorage())
+    image = models.ImageField(null=True)
     stay = models.ForeignKey(
         Stay,
         on_delete=models.CASCADE,
@@ -205,22 +204,6 @@ class Accommodation(models.Model):
         else:
             self.is_booked = False
         self.save()
-
-
-class AccommodationFrames(models.Model):
-    title = models.CharField(max_length=255)
-    rooms = models.ForeignKey(
-        Accommodation, on_delete=models.CASCADE, related_name="room_frames"
-    )
-    image = models.ImageField(null=True, upload_to="accommodation_frames_images", storage=GoogleCloudStorage())
-
-    class Meta:
-        ordering = ("title",)
-        verbose_name = "Accommodation frame"
-        verbose_name_plural = "Accommodation frames"
-
-    def __str__(self):
-        return self.title
 
 
 class Booking(models.Model):

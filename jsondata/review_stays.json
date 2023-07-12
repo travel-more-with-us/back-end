@@ -25,5 +25,77 @@
       "text": "Not satisfied with the stay.",
       "stay": 2
     }
+  },
+  {
+    "model": "TravelMore.reviewstay",
+    "pk": 4,
+    "fields": {
+      "user": 1,
+      "text": "Amazing place to relax and unwind. The staff was very friendly and attentive.",
+      "stay": 3
+    }
+  },
+  {
+    "model": "TravelMore.reviewstay",
+    "pk": 5,
+    "fields": {
+      "user": 2,
+      "text": "Exceeded my expectations. The room was spacious and well-appointed.",
+      "stay": 4
+    }
+  },
+  {
+    "model": "TravelMore.reviewstay",
+    "pk": 6,
+    "fields": {
+      "user": 3,
+      "text": "Beautiful location with stunning views. The amenities were top-notch.",
+      "stay": 5
+    }
+  },
+  {
+    "model": "TravelMore.reviewstay",
+    "pk": 7,
+    "fields": {
+      "user": 4,
+      "text": "A perfect getaway. The food was delicious and the service was exceptional.",
+      "stay": 1
+    }
+  },
+  {
+    "model": "TravelMore.reviewstay",
+    "pk": 8,
+    "fields": {
+      "user": 5,
+      "text": "Highly recommended. The staff went above and beyond to make our stay memorable.",
+      "stay": 2
+    }
+  },
+  {
+    "model": "TravelMore.reviewstay",
+    "pk": 9,
+    "fields": {
+      "user": 6,
+      "text": "An excellent choice for a family vacation. The kids loved the activities and facilities.",
+      "stay": 3
+    }
+  },
+  {
+    "model": "TravelMore.reviewstay",
+    "pk": 10,
+    "fields": {
+      "user": 4,
+      "text": "A peaceful retreat in a picturesque setting. The spa treatments were divine.",
+      "stay": 4
+    }
+  },
+  {
+    "model": "TravelMore.reviewstay",
+    "pk": 11,
+    "fields": {
+      "user": 5,
+      "text": "Unforgettable experience. The attention to detail was remarkable.",
+      "stay": 5
+    }
   }
 ]

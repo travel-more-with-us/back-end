@@ -37,5 +37,96 @@
       "rooms": 3,
       "total_price": 350.0
     }
+  },
+  {
+    "model": "TravelMore.booking",
+    "pk": 4,
+    "fields": {
+      "user": 2,
+      "arrival_date": "2023-08-25",
+      "departure_date": "2023-09-01",
+      "number_of_guests": 2,
+      "stay": 4,
+      "rooms": 1,
+      "total_price": 600.0
+    }
+  },
+  {
+    "model": "TravelMore.booking",
+    "pk": 5,
+    "fields": {
+      "user": 3,
+      "arrival_date": "2023-09-05",
+      "departure_date": "2023-09-12",
+      "number_of_guests": 4,
+      "stay": 5,
+      "rooms": 2,
+      "total_price": 1200.0
+    }
+  },
+  {
+    "model": "TravelMore.booking",
+    "pk": 6,
+    "fields": {
+      "user": 3,
+      "arrival_date": "2023-08-10",
+      "departure_date": "2023-08-17",
+      "number_of_guests": 1,
+      "stay": 1,
+      "rooms": 1,
+      "total_price": 400.0
+    }
+  },
+  {
+    "model": "TravelMore.booking",
+    "pk": 7,
+    "fields": {
+      "user": 4,
+      "arrival_date": "2023-07-10",
+      "departure_date": "2023-07-20",
+      "number_of_guests": 2,
+      "stay": 2,
+      "rooms": 1,
+      "total_price": 600.0
+    }
+  },
+  {
+    "model": "TravelMore.booking",
+    "pk": 8,
+    "fields": {
+      "user": 4,
+      "arrival_date": "2023-08-01",
+      "departure_date": "2023-08-07",
+      "number_of_guests": 3,
+      "stay": 3,
+      "rooms": 2,
+      "total_price": 900.0
+    }
+  },
+  {
+    "model": "TravelMore.booking",
+    "pk": 9,
+    "fields": {
+      "user": 5,
+      "arrival_date": "2023-09-20",
+      "departure_date": "2023-09-25",
+      "number_of_guests": 1,
+      "stay": 4,
+      "rooms": 1,
+      "total_price": 350.0
+    }
+  },
+  {
+    "model": "TravelMore.booking",
+    "pk": 10,
+    "fields": {
+      "user": 5,
+      "arrival_date": "2023-07-15",
+      "departure_date": "2023-07-22",
+      "number_of_guests": 2,
+      "stay": 5,
+      "rooms": 1,
+      "total_price": 500.0
+    }
   }
 ]

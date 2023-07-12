@@ -3,38 +3,38 @@
     "model": "TravelMore.stay",
     "pk": 1,
     "fields": {
-      "name": "Hotel Grande",
-      "description": "5 star hotel for those who care about themselves",
-      "address": "123 Main Street",
-      "image": "https://example.com/hotel_image.jpg",
+      "name": "Casa Verde",
+      "description": "A luxurious 5-star hotel for those who value comfort and indulgence. Experience impeccable service, elegant rooms, and world-class amenities in a stunning setting.",
+      "address": "123 Main Street, Cityville",
+      "image": "stays_images/CasaVerde.png",
       "url_map_stay": "https://example.com/hotel_map",
-      "destination": 1,
-      "amenities": [1, 2, 3]
+      "destination": 9,
+      "amenities": [1, 2, 3, 5, 7]
     }
   },
   {
     "model": "TravelMore.stay",
     "pk": 2,
     "fields": {
-      "name": "Resort Touristo",
-      "description": "Come and feel yourself alive",
-      "address": "456 Elm Street",
-      "image": "https://example.com/resort_image.jpg",
+      "name": "Holiday Home",
+      "description": "Escape to our charming holiday home and immerse yourself in the beauty of nature. Enjoy peaceful surroundings, cozy interiors, and a range of outdoor activities for a memorable getaway.",
+      "address": "456 Elm Street, Seaside Village",
+      "image": "stays_images/HolidayHome.png",
       "url_map_stay": "https://example.com/resort_map",
       "destination": 2,
-      "amenities": [3, 4, 5]
+      "amenities": [3, 4, 5, 6, 8]
     }
   },
   {
     "model": "TravelMore.stay",
     "pk": 3,
     "fields": {
-      "name": "Luxury Villa",
+      "name": "Dicmo Home",
       "description": "Best place to get some rest, recharge and feel free",
       "address": "12 Palm Street",
-      "image": "https://example.com/resort_image.jpg",
+      "image": "stays_images/DicmoHome.png",
       "url_map_stay": "https://example.com/resort_map",
-      "destination": 2,
+      "destination": 7,
       "amenities": [1, 4, 5, 2]
     }
   },
@@ -42,26 +42,52 @@
     "model": "TravelMore.stay",
     "pk": 4,
     "fields": {
-      "name": "Hotel Magnifico",
+      "name": "Villa Slika",
       "description": "Magnificent place with unique atmosphere",
       "address": "17 Dream Street",
-      "image": "https://example.com/resort_image.jpg",
+      "image": "stays_images/VillaSlika.png",
       "url_map_stay": "https://example.com/resort_map",
-      "destination": 2,
-      "amenities": [1, 3, 5]
+      "destination": 6,
+      "amenities": [1, 3, 5, 7, 9]
     }
   },
   {
     "model": "TravelMore.stay",
     "pk": 5,
     "fields": {
-      "name": "Holiday Home Slika",
+      "name": "Miriam Kastela",
       "description": "You are our most important guest. Every time.",
       "address": "Green Boulvard",
-      "image": "https://example.com/resort_image.jpg",
+      "image": "stays_images/MiriamKastela.png",
       "url_map_stay": "https://example.com/resort_map",
-      "destination": 2,
-      "amenities": [3, 4, 5, 7]
+      "destination": 3,
+      "amenities": [1, 3, 4, 5, 7]
+    }
+  },
+  {
+    "model": "TravelMore.stay",
+    "pk": 6,
+    "fields": {
+      "name": "Villa Antica",
+      "description": "You are our most important guest. Every time.",
+      "address": "Green Boulvard",
+      "image": "stays_images/VillaAntica.png",
+      "url_map_stay": "https://example.com/resort_map",
+      "destination": 4,
+      "amenities": [1, 3, 4, 5, 7]
+    }
+  },
+  {
+    "model": "TravelMore.stay",
+    "pk": 7,
+    "fields": {
+      "name": "Luxury Villa Bachin",
+      "description": "You are our most important guest. Every time.",
+      "address": "Green Boulvard",
+      "image": "stays_images/LuxuryVillaBachin.png",
+      "url_map_stay": "https://example.com/resort_map",
+      "destination": 1,
+      "amenities": [1, 3, 4, 5, 7]
     }
   }
 ]

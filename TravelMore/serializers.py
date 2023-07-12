@@ -11,7 +11,6 @@ from TravelMore.models import (
     ReviewStay,
     ReviewDestination,
     Accommodation,
-    AccommodationFrames,
 )
 
 
@@ -117,20 +116,6 @@ class ReviewDestinationSerializer(serializers.ModelSerializer):
         )
 
 
-class AccommodationFramesSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = AccommodationFrames
-        fields = ("id", "title", "rooms", "image")
-
-
-class AccommodationFramesListSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = AccommodationFrames
-        fields = ("id", "image")
-
-
 class AccommodationSerializer(serializers.ModelSerializer):
 
     class Meta:
@@ -169,7 +154,6 @@ class AccommodationListSerializer(serializers.ModelSerializer):
 
 
 class AccommodationDetailSerializer(serializers.ModelSerializer):
-    room_frames = AccommodationFramesListSerializer(many=True, read_only=True)
     amenities = AmenitySerializer(many=True, read_only=True)
     stay = serializers.CharField(read_only=True, source="stay.name")
 
@@ -185,8 +169,7 @@ class AccommodationDetailSerializer(serializers.ModelSerializer):
             "is_booked",
             "night_price",
             "amenities",
-            "image",
-            "room_frames"
+            "image"
         )
 
 

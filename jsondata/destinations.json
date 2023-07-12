@@ -6,8 +6,8 @@
       "name": "Antalya",
       "country": "Turkey",
       "description": "Antalya - Located on the stunning Turkish Riviera, Antalya is a vibrant coastal city that offers a perfect blend of natural beauty, ancient ruins, and modern attractions. With its picturesque beaches, crystal-clear turquoise waters, and breathtaking mountain scenery, Antalya is a haven for sun-seekers and outdoor enthusiasts. Explore the well-preserved Roman architecture in the historic old town of Kaleiçi, visit the impressive Antalya Museum to delve into the region's rich history, or enjoy the bustling atmosphere of the vibrant marina. With a lively nightlife, delicious local cuisine, and warm Turkish hospitality, Antalya is a captivating destination that caters to all types of travelers.",
-      "image": "https://storage.googleapis.com/travelmore_bucket/destination_images/Antalya.png",
-      "url_map_destination": "https://example.com/antalya"
+      "image": "destination_images/Antalya.png",
+      "url_map_destination": ""
     }
   },
   {
@@ -17,8 +17,173 @@
       "name": "Athens",
       "country": "Greece",
       "description": "Athens - As the historic capital of Greece, Athens is a city steeped in myth, history, and culture. Home to iconic landmarks like the Acropolis, Parthenon, and Temple of Olympian Zeus, Athens offers a fascinating journey through ancient civilization. Explore the ancient ruins and archaeological sites, wander through the charming Plaka neighborhood with its narrow streets and traditional tavernas, and visit world-class museums like the Acropolis Museum and National Archaeological Museum. Beyond its historical significance, Athens also boasts a vibrant contemporary scene with modern architecture, trendy neighborhoods, art galleries, and a thriving food culture. From ancient wonders to modern delights, Athens is a captivating city that seamlessly blends the past and present.",
-      "image": "https://storage.googleapis.com/travelmore_bucket/destination_images/Athens.png",
-      "url_map_destination": "https://example.com/athens"
+      "image": "destination_images/Athens.png",
+      "url_map_destination": ""
+    }
+  },
+  {
+    "model": "TravelMore.destination",
+    "pk": 3,
+    "fields": {
+      "name": "Bali",
+      "country": "Indonesia",
+      "description": "Bali - Nestled in the Indonesian archipelago, Bali is a tropical paradise that captivates visitors with its stunning natural beauty, vibrant culture, and warm hospitality. Known as the 'Island of the Gods,' Bali offers a diverse range of experiences, from picturesque beaches with turquoise waters and world-class surfing spots to lush terraced rice fields and sacred temples. Immerse yourself in the island's unique spirituality by attending a traditional Balinese ceremony or explore the artistic heart of Ubud, where you can witness traditional dance performances and discover local handicrafts. Bali also tempts food lovers with its delicious cuisine, blending aromatic spices, fresh seafood, and tropical fruits. With its enchanting landscapes and rich cultural heritage, Bali offers a truly unforgettable escape.",
+      "image": "destination_images/Bali.png",
+      "url_map_destination": ""
+    }
+  },
+  {
+    "model": "TravelMore.destination",
+    "pk": 4,
+    "fields": {
+      "name": "Bangkok",
+      "country": "Thailand",
+      "description": "Bangkok - A vibrant metropolis that never fails to impress, Bangkok is a city of contrasts, where ancient temples coexist with towering skyscrapers and traditional markets blend with luxurious shopping malls. Immerse yourself in the rich history and culture by visiting iconic temples like Wat Arun and Wat Phra Kaew, or explore the bustling markets of Chinatown and Chatuchak Weekend Market. Indulge in the city's culinary delights, from mouthwatering street food to world-class dining experiences, and enjoy the lively nightlife scene along the famous Khao San Road or in the trendy Sukhumvit area. Bangkok also offers a plethora of museums, galleries, and cultural performances, showcasing its dynamic arts and entertainment scene. With its vibrant street life, ornate architecture, and welcoming locals, Bangkok is a city that never ceases to amaze.",
+      "image": "destination_images/Bangkok.png",
+      "url_map_destination": ""
+    }
+  },
+  {
+    "model": "TravelMore.destination",
+    "pk": 5,
+    "fields": {
+      "name": "Berlin",
+      "country": "Germany",
+      "description": "Berlin - A city that effortlessly blends history, culture, and innovation, Berlin is a captivating destination that showcases its tumultuous past while embracing the present and future. Dive into the city's history by visiting iconic landmarks such as the Berlin Wall, Checkpoint Charlie, and the Reichstag building. Explore the vibrant neighborhoods of Kreuzberg and Prenzlauer Berg, known for their artistic vibes, trendy cafes, and vibrant street art. Immerse yourself in the world-class museums and galleries, such as the Pergamon Museum and East Side Gallery, or relax in the sprawling Tiergarten park. Berlin's nightlife scene is legendary, offering a diverse range of clubs, bars, and live music venues. With its thriving arts scene, cutting-edge architecture, and a multicultural culinary landscape, Berlin is a city that embraces diversity and celebrates creativity.",
+      "image": "destination_images/Berlin.png",
+      "url_map_destination": ""
+    }
+  },
+  {
+    "model": "TravelMore.destination",
+    "pk": 6,
+    "fields": {
+      "name": "Croatia",
+      "country": "Croatia",
+      "description": "Croatia - Nestled on the stunning Adriatic coast, Croatia is a gem of a country that captivates visitors with its natural beauty, rich history, and Mediterranean charm. Explore the captivating city of Dubrovnik, a UNESCO World Heritage site renowned for its ancient city walls, charming streets, and breathtaking views of the Adriatic Sea. Visit the stunning Plitvice Lakes National Park, with its cascading waterfalls and turquoise lakes, or discover the Roman ruins in the historical city of Split. Croatia's coastline offers a paradise for beach lovers, with pristine beaches, secluded coves, and crystal-clear waters. Sample delicious seafood delicacies, indulge in local wines, and immerse yourself in the vibrant cultural festivals and traditional folklore. With its mix of stunning landscapes, historic treasures, and warm hospitality, Croatia is an enchanting destination that leaves a lasting impression.",
+      "image": "destination_images/Croatia.png",
+      "url_map_destination": ""
+    }
+  },
+  {
+    "model": "TravelMore.destination",
+    "pk": 7,
+    "fields": {
+      "name": "Dubrovnik",
+      "country": "Croatia",
+      "description": "Dubrovnik - Nestled along the stunning Adriatic coast of Croatia, Dubrovnik is a city steeped in history and beauty. Encircled by medieval city walls, the UNESCO-listed old town of Dubrovnik is a treasure trove of architectural wonders, picturesque squares, and narrow cobblestone streets. Walk along the iconic Stradun, visit the impressive Rector's Palace, and enjoy breathtaking views from the city walls. Discover the rich maritime history at the Maritime Museum, or take a cable car ride to the top of Mount Srđ for panoramic views of the city and the Adriatic Sea. With its stunning coastal scenery, charming cafes, and delightful seafood restaurants, Dubrovnik is a place where history comes alive amidst a captivating Mediterranean setting.",
+      "image": "destination_images/Dubrovnik.png",
+      "url_map_destination": ""
+    }
+  },
+  {
+    "model": "TravelMore.destination",
+    "pk": 8,
+    "fields": {
+      "name": "Galle",
+      "country": "Sri Lanka",
+      "description": "Galle - Located on the southern coast of Sri Lanka, Galle is a captivating city that showcases the island's colonial heritage and natural beauty. Explore the UNESCO-listed Galle Fort, a well-preserved colonial fortress with narrow streets, historic buildings, and boutique shops. Walk along the fortifications to enjoy stunning views of the Indian Ocean and visit the Dutch Reformed Church and the Maritime Archaeological Museum. Stroll through the vibrant streets of the old town, admiring the mix of Dutch, Portuguese, and British architectural influences. Galle also offers beautiful beaches where you can relax, surf, or take a boat ride to spot marine life. Immerse yourself in the local culture by exploring traditional markets and sampling delectable Sri Lankan cuisine. With its unique blend of history, culture, and coastal charm, Galle is a destination that leaves a lasting impression.",
+      "image": "destination_images/Galle.png",
+      "url_map_destination": ""
+    }
+  },
+  {
+    "model": "TravelMore.destination",
+    "pk": 9,
+    "fields": {
+      "name": "Madeira",
+      "country": "Portugal",
+      "description": "Madeira - Situated in the Atlantic Ocean, Madeira is a picturesque Portuguese island renowned for its dramatic landscapes, stunning cliffs, and lush greenery. Explore the Levadas, the island's intricate network of walking trails that wind through forests, mountains, and terraced vineyards, offering breathtaking views along the way. Visit the charming capital city of Funchal, with its colorful markets, historic buildings, and beautiful gardens. Discover the natural wonders of the island, such as the volcanic caves of São Vicente or the rugged cliffs of Cabo Girão, one of the highest sea cliffs in the world. Madeira is also famous for its wine production, so be sure to taste the delicious Madeira wine and indulge in the local gastronomy. With its natural beauty, mild climate, and warm hospitality, Madeira is a paradise for nature lovers and those seeking tranquility.",
+      "image": "destination_images/Madeira.png",
+      "url_map_destination": ""
+    }
+  },
+  {
+    "model": "TravelMore.destination",
+    "pk": 10,
+    "fields": {
+      "name": "Manchester",
+      "country": "United Kingdom",
+      "description": "Manchester - A vibrant city in the United Kingdom, Manchester is a cultural and industrial hub known for its rich history, music scene, and thriving sports culture. Explore the iconic Manchester Cathedral, visit the historic John Rylands Library, or dive into the city's industrial past at the Museum of Science and Industry. Immerse yourself in the vibrant music scene by visiting legendary venues like the Manchester Arena or the iconic band Oasis' birthplace at the Sifters Records shop. Football fans can experience the passion at Old Trafford, the home stadium of Manchester United, or visit the National Football Museum. With its lively nightlife, trendy neighborhoods, and a wide range of cultural events and festivals, Manchester offers a dynamic blend of history, arts, and entertainment.",
+      "image": "destination_images/Manchester.png",
+      "url_map_destination": ""
+    }
+  },
+  {
+    "model": "TravelMore.destination",
+    "pk": 11,
+    "fields": {
+      "name": "Paphos",
+      "country": "Cyprus",
+      "description": "Paphos - Located on the southwestern coast of Cyprus, Paphos is a city with a rich history, stunning coastal landscapes, and a relaxing atmosphere. Explore the archaeological sites of the Paphos Archaeological Park, where you can discover ancient Roman villas with beautifully preserved mosaics. Visit the medieval Paphos Castle, situated at the picturesque harbor, or wander through the charming streets of the old town with its traditional buildings and vibrant cafes. Relax on the pristine beaches or take a boat trip to explore the crystal-clear waters and hidden coves. Paphos is also known as the birthplace of Aphrodite, the Greek goddess of love, and you can visit the mythical birthplace at Petra tou Romiou. With its blend of history, natural beauty, and Mediterranean charm, Paphos offers a delightful escape.",
+      "image": "destination_images/Paphos.png",
+      "url_map_destination": ""
+    }
+  },
+  {
+    "model": "TravelMore.destination",
+    "pk": 12,
+    "fields": {
+      "name": "Pattaya",
+      "country": "Thailand",
+      "description": "Pattaya - Situated on the Gulf of Thailand, Pattaya is a popular beach resort city known for its vibrant nightlife, stunning beaches, and a wide range of entertainment options. Enjoy the lively atmosphere of the famous Walking Street, where you can find bustling bars, nightclubs, and street performers. Relax on the beautiful beaches, indulge in water sports activities such as jet skiing and parasailing, or take a boat trip to explore the nearby islands. Visit popular attractions like the Sanctuary of Truth, a magnificent wooden temple, or the Floating Market, where you can immerse yourself in local culture and sample delicious Thai street food. With its energetic vibe, endless entertainment options, and picturesque coastal setting, Pattaya offers something for everyone.",
+      "image": "destination_images/Pattaya.png",
+      "url_map_destination": ""
+    }
+  },
+  {
+    "model": "TravelMore.destination",
+    "pk": 13,
+    "fields": {
+      "name": "Phuket",
+      "country": "Thailand",
+      "description": "Phuket - Thailand's largest island, Phuket is a tropical paradise renowned for its pristine beaches, crystal-clear turquoise waters, and vibrant nightlife. Relax on world-famous beaches like Patong, Karon, and Kata, where you can soak up the sun, enjoy water activities, or indulge in beachside massages. Explore the old town of Phuket, with its charming Sino-Portuguese architecture, colorful buildings, and vibrant street art. Visit iconic landmarks like the Big Buddha or enjoy panoramic views from the viewpoints scattered around the island. Phuket also offers a wide range of dining options, from local street food to international cuisine, as well as bustling markets and shopping centers. With its stunning natural beauty, warm hospitality, and diverse attractions, Phuket is a tropical paradise that caters to all tastes.",
+      "image": "destination_images/Phuket.png",
+      "url_map_destination": ""
+    }
+  },
+  {
+    "model": "TravelMore.destination",
+    "pk": 14,
+    "fields": {
+      "name": "Rio de Janeiro",
+      "country": "Brazil",
+      "description": "Rio de Janeiro - Nestled along the coast of Brazil, Rio de Janeiro is a vibrant and iconic city famous for its stunning landscapes, vibrant culture, and legendary Carnival celebrations. Marvel at the breathtaking views from atop the Corcovado Mountain, home to the towering statue of Christ the Redeemer, or relax on the iconic Copacabana and Ipanema beaches. Explore the vibrant neighborhoods of Santa Teresa and Lapa, known for their colonial architecture, lively street art, and samba clubs. Visit the Maracanã Stadium, a temple of football, or take a cable car ride to the top of Sugarloaf Mountain for panoramic vistas. Rio de Janeiro's Carnival is an explosion of color, music, and dance, showcasing the city's rich cultural heritage. With its captivating beauty, pulsating energy, and warm, welcoming locals, Rio de Janeiro is a city that truly captivates the heart.",
+      "image": "destination_images/Rio_de_Janeiro.png",
+      "url_map_destination": ""
+    }
+  },
+  {
+    "model": "TravelMore.destination",
+    "pk": 15,
+    "fields": {
+      "name": "Split",
+      "country": "Croatia",
+      "description": "Split - Situated on the stunning Dalmatian coast of Croatia, Split is a city that seamlessly blends ancient history with a vibrant modern atmosphere. Explore the UNESCO-listed Diocletian's Palace, a Roman palace complex that forms the heart of the city, featuring ancient ruins, charming streets, and bustling squares. Stroll along the Riva promenade, lined with cafes and palm trees, or venture into the labyrinthine streets of the old town to discover hidden gems. Visit the Cathedral of St. Domnius, climb the Bell Tower for panoramic views, or relax on the popular Bačvice beach. Split is also a gateway to the breathtaking islands of the Dalmatian coast, such as Hvar and Brac, offering idyllic beaches, crystal-clear waters, and charming coastal towns. With its fascinating history, vibrant atmosphere, and stunning coastal setting, Split is a destination that leaves a lasting impression.",
+      "image": "destination_images/Split.png",
+      "url_map_destination": ""
+    }
+  },
+  {
+    "model": "TravelMore.destination",
+    "pk": 16,
+    "fields": {
+      "name": "Tbilisi",
+      "country": "Georgia",
+      "description": "Tbilisi - The capital city of Georgia, Tbilisi is a captivating blend of ancient history, diverse architecture, and warm hospitality. Explore the cobbled streets of the old town, where medieval buildings, traditional sulfur baths, and stunning churches coexist. Visit the Narikala Fortress, perched on a hilltop, to enjoy panoramic views of the city and the Mtkvari River. Discover the unique architecture of the Peace Bridge and the modernist structures of the Rike Park area. Indulge in the rich flavors of Georgian cuisine, characterized by hearty dishes like khinkali (dumplings) and khachapuri (cheese-filled bread), paired with local wines. Tbilisi also offers a vibrant arts scene, with galleries, theaters, and contemporary art spaces. With its welcoming atmosphere, architectural treasures, and cultural richness, Tbilisi is a city that truly captivates.",
+      "image": "destination_images/Tbilisi.png",
+      "url_map_destination": ""
+    }
+  },
+  {
+    "model": "TravelMore.destination",
+    "pk": 17,
+    "fields": {
+      "name": "Warsaw",
+      "country": "Poland",
+      "description": "Warsaw - The capital of Poland, Warsaw is a city that has risen from the ashes, showcasing its resilience, historical treasures, and vibrant cultural scene. Explore the reconstructed Old Town, a UNESCO World Heritage site, with its colorful facades, cobblestone streets, and historic landmarks. Visit the Royal Castle, the symbol of Polish royalty, or learn about the country's tumultuous history at the Warsaw Uprising Museum. Discover the modern side of Warsaw in the bustling downtown area, where skyscrapers, shopping centers, and trendy restaurants abound. The city also boasts numerous parks and green spaces, offering opportunities for relaxation and outdoor activities. Warsaw's cultural scene is thriving, with world-class museums, theaters, and music festivals. With its mix of history, modernity, and cultural richness, Warsaw is a city that showcases Poland's enduring spirit.",
+      "image": "destination_images/Warsaw.png",
+      "url_map_destination": ""
     }
   }
 ]

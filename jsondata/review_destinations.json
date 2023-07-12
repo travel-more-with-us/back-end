@@ -25,5 +25,77 @@
       "text": "Not satisfied with the stay.",
       "stay": 2
     }
+  },
+  {
+    "model": "TravelMore.reviewstay",
+    "pk": 4,
+    "fields": {
+      "user": 4,
+      "text": "Amazing destination! Loved every moment.",
+      "stay": 3
+    }
+  },
+  {
+    "model": "TravelMore.reviewstay",
+    "pk": 5,
+    "fields": {
+      "user": 5,
+      "text": "Highly recommended. The views are breathtaking.",
+      "stay": 4
+    }
+  },
+  {
+    "model": "TravelMore.reviewstay",
+    "pk": 6,
+    "fields": {
+      "user": 6,
+      "text": "Unforgettable experience. Will definitely visit again.",
+      "stay": 5
+    }
+  },
+  {
+    "model": "TravelMore.reviewstay",
+    "pk": 7,
+    "fields": {
+      "user": 1,
+      "text": "Perfect stay! Everything exceeded my expectations.",
+      "stay": 3
+    }
+  },
+  {
+    "model": "TravelMore.reviewstay",
+    "pk": 8,
+    "fields": {
+      "user": 2,
+      "text": "Beautiful destination with a rich cultural heritage.",
+      "stay": 4
+    }
+  },
+  {
+    "model": "TravelMore.reviewstay",
+    "pk": 9,
+    "fields": {
+      "user": 3,
+      "text": "A disappointing experience. The service was below par.",
+      "stay": 5
+    }
+  },
+  {
+    "model": "TravelMore.reviewstay",
+    "pk": 10,
+    "fields": {
+      "user": 4,
+      "text": "Highly recommended for nature lovers. The landscapes are breathtaking.",
+      "stay": 1
+    }
+  },
+  {
+    "model": "TravelMore.reviewstay",
+    "pk": 11,
+    "fields": {
+      "user": 5,
+      "text": "An unforgettable trip. The locals were warm and welcoming.",
+      "stay": 2
+    }
   }
 ]

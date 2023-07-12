@@ -14,7 +14,6 @@ from TravelMore.models import (
     ReviewStay,
     ReviewDestination,
     Accommodation,
-    AccommodationFrames,
     Booking,
 )
 
@@ -240,21 +239,6 @@ class AccommodationModelTest(TestCase):
 
         room.reset_booking_status()
         self.assertFalse(room.is_booked)
-
-
-class AccommodationFramesModelTest(TestCase):
-
-    def test_accommodation_frame_str(self):
-        destination = Destination.objects.create(
-            name="The Pacific Ocean", country="USA"
-        )
-        stay = Stay.objects.create(name="Hotel", destination=destination)
-        rooms = Accommodation.objects.create(name="Standard", stay=stay)
-        room_frame = AccommodationFrames.objects.create(
-            title="Standard_1", rooms=rooms
-        )
-
-        self.assertEqual(str(room_frame), f"{room_frame.title}")
 
 
 class BookingModelTest(TestCase):

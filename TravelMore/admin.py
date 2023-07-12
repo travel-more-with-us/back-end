@@ -6,7 +6,6 @@ from TravelMore.models import (
     Stay,
     StayFrames,
     Accommodation,
-    AccommodationFrames,
     RatingStar,
     ReviewStay,
     ReviewDestination,
@@ -78,10 +77,6 @@ class StayFramesAdmin(ImageAdminMixin, admin.ModelAdmin):
     list_display = ("title", "stays", "get_image")
 
 
-class AccommodationFramesInline(PictureAdminMixin, admin.TabularInline):
-    model = AccommodationFrames
-    extra = 1
-
 
 @admin.register(Accommodation)
 class AccommodationAdmin(ImageAdminMixin, admin.ModelAdmin):
@@ -96,12 +91,6 @@ class AccommodationAdmin(ImageAdminMixin, admin.ModelAdmin):
         "get_image",
     )
     search_fields = ("name", "type_room")
-    inlines = [AccommodationFramesInline]
-
-
-@admin.register(AccommodationFrames)
-class AccommodationFramesAdmin(ImageAdminMixin, admin.ModelAdmin):
-    list_display = ("title", "rooms", "get_image")
 
 
 @admin.register(Booking)

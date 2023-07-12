@@ -43,5 +43,50 @@
       "star": 5,
       "destination": 5
     }
+  },
+  {
+    "model": "TravelMore.ratingdestination",
+    "pk": 6,
+    "fields": {
+      "user": 3,
+      "star": 3,
+      "destination": 1
+    }
+  },
+  {
+    "model": "TravelMore.ratingdestination",
+    "pk": 7,
+    "fields": {
+      "user": 3,
+      "star": 4,
+      "destination": 2
+    }
+  },
+  {
+    "model": "TravelMore.ratingdestination",
+    "pk": 8,
+    "fields": {
+      "user": 4,
+      "star": 5,
+      "destination": 3
+    }
+  },
+  {
+    "model": "TravelMore.ratingdestination",
+    "pk": 9,
+    "fields": {
+      "user": 4,
+      "star": 2,
+      "destination": 4
+    }
+  },
+  {
+    "model": "TravelMore.ratingdestination",
+    "pk": 10,
+    "fields": {
+      "user": 5,
+      "star": 3,
+      "destination": 5
+    }
   }
 ]

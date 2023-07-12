@@ -43,5 +43,68 @@
       "star": 5,
       "stay": 5
     }
+  },
+  {
+    "model": "TravelMore.ratingstay",
+    "pk": 6,
+    "fields": {
+      "user": 3,
+      "star": 3,
+      "stay": 1
+    }
+  },
+  {
+    "model": "TravelMore.ratingstay",
+    "pk": 7,
+    "fields": {
+      "user": 3,
+      "star": 4,
+      "stay": 2
+    }
+  },
+  {
+    "model": "TravelMore.ratingstay",
+    "pk": 8,
+    "fields": {
+      "user": 4,
+      "star": 5,
+      "stay": 3
+    }
+  },
+  {
+    "model": "TravelMore.ratingstay",
+    "pk": 9,
+    "fields": {
+      "user": 4,
+      "star": 2,
+      "stay": 4
+    }
+  },
+  {
+    "model": "TravelMore.ratingstay",
+    "pk": 10,
+    "fields": {
+      "user": 5,
+      "star": 3,
+      "stay": 5
+    }
+  },
+  {
+    "model": "TravelMore.ratingstay",
+    "pk": 11,
+    "fields": {
+      "user": 6,
+      "star": 4,
+      "stay": 1
+    }
+  },
+  {
+    "model": "TravelMore.ratingstay",
+    "pk": 12,
+    "fields": {
+      "user": 6,
+      "star": 5,
+      "stay": 3
+    }
   }
 ]

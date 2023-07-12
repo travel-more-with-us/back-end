@@ -12,7 +12,6 @@ from TravelMore.models import (
     Stay,
     StayFrames,
     Accommodation,
-    AccommodationFrames,
     Amenity,
     Booking,
 )
@@ -35,7 +34,6 @@ from TravelMore.serializers import (
     AccommodationListSerializer,
     AccommodationDetailSerializer,
     AccommodationImageSerializer,
-    AccommodationFramesSerializer,
     ReviewDestinationSerializer,
     ReviewStaySerializer,
     AmenitySerializer,
@@ -280,14 +278,6 @@ class AddStarRatingStayViewSet(
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
-
-
-class AccommodationFramesViewSet(
-    mixins.CreateModelMixin, viewsets.GenericViewSet
-):
-    queryset = AccommodationFrames.objects.select_related("rooms")
-    serializer_class = AccommodationFramesSerializer
-    permission_classes = (IsAdminUser,)
 
 
 class ReviewDestinationViewSet(

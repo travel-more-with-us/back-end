@@ -6,7 +6,6 @@ from TravelMore.views import (
     StayViewSet,
     StayFramesViewSet,
     AccommodationViewSet,
-    AccommodationFramesViewSet,
     AddStarRatingDestinationViewSet,
     AddStarRatingStayViewSet,
     ReviewDestinationViewSet,
@@ -36,11 +35,6 @@ router.register(
 )
 router.register(
     "stay-frames", StayFramesViewSet, basename="stay-frames"
-)
-router.register(
-    "room-frames",
-    AccommodationFramesViewSet,
-    basename="room-frames"
 )
 router.register(
     "rating-destinations",

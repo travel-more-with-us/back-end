@@ -9,7 +9,7 @@
       "number_rooms": "ONE ROOM",
       "number_beds": "SINGLE-BED",
       "night_price": 100.0,
-      "image": "accommodation_images/standard_room.jpg",
+      "image": "accommodation_images/standard_room.png",
       "amenities": [1, 2, 3]
     }
   },
@@ -23,7 +23,7 @@
       "number_rooms": "ONE ROOM",
       "number_beds": "DOUBLE-BED",
       "night_price": 200.0,
-      "image": "accommodation_images/deluxe_suite.jpg",
+      "image": "accommodation_images/deluxe_suite.png",
       "amenities": [2, 4, 6]
     }
   },
@@ -37,8 +37,64 @@
       "number_rooms": "TWO ROOM",
       "number_beds": "DOUBLE-BED",
       "night_price": 150.0,
-      "image": "accommodation_images/family_room.jpg",
+      "image": "accommodation_images/family_room.png",
       "amenities": [1, 3, 5]
+    }
+  },
+  {
+    "model": "TravelMore.accommodation",
+    "pk": 4,
+    "fields": {
+      "name": "Superior Room",
+      "stay": 1,
+      "type_room": "STANDARD",
+      "number_rooms": "ONE ROOM",
+      "number_beds": "DOUBLE-BED",
+      "night_price": 120.0,
+      "image": "accommodation_images/superior_room.png",
+      "amenities": [1, 3, 4]
+    }
+  },
+  {
+    "model": "TravelMore.accommodation",
+    "pk": 5,
+    "fields": {
+      "name": "Executive Suite",
+      "stay": 2,
+      "type_room": "SUITE",
+      "number_rooms": "ONE ROOM",
+      "number_beds": "KING-BED",
+      "night_price": 250.0,
+      "image": "accommodation_images/executive_suite.png",
+      "amenities": [2, 5, 7]
+    }
+  },
+  {
+    "model": "TravelMore.accommodation",
+    "pk": 6,
+    "fields": {
+      "name": "Classic Room",
+      "stay": 3,
+      "type_room": "STANDARD",
+      "number_rooms": "ONE ROOM",
+      "number_beds": "SINGLE-BED",
+      "night_price": 90.0,
+      "image": "accommodation_images/classic_room.png",
+      "amenities": [1, 2, 3]
+    }
+  },
+  {
+    "model": "TravelMore.accommodation",
+    "pk": 7,
+    "fields": {
+      "name": "Family Suite",
+      "stay": 3,
+      "type_room": "SUITE",
+      "number_rooms": "TWO ROOM",
+      "number_beds": "DOUBLE-BED",
+      "night_price": 180.0,
+      "image": "accommodation_images/family_suite.png",
+      "amenities": [1, 3, 4, 6]
     }
   }
 ]
