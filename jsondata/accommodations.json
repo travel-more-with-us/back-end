@@ -1,0 +1,44 @@
+[
+  {
+    "model": "TravelMore.accommodation",
+    "pk": 1,
+    "fields": {
+      "name": "Standard Room",
+      "stay": 1,
+      "type_room": "STANDARD",
+      "number_rooms": "ONE ROOM",
+      "number_beds": "SINGLE-BED",
+      "night_price": 100.0,
+      "image": "accommodation_images/standard_room.jpg",
+      "amenities": [1, 2, 3]
+    }
+  },
+  {
+    "model": "TravelMore.accommodation",
+    "pk": 2,
+    "fields": {
+      "name": "Deluxe Suite",
+      "stay": 1,
+      "type_room": "SUITE",
+      "number_rooms": "ONE ROOM",
+      "number_beds": "DOUBLE-BED",
+      "night_price": 200.0,
+      "image": "accommodation_images/deluxe_suite.jpg",
+      "amenities": [2, 4, 6]
+    }
+  },
+  {
+    "model": "TravelMore.accommodation",
+    "pk": 3,
+    "fields": {
+      "name": "Family Room",
+      "stay": 2,
+      "type_room": "STANDARD",
+      "number_rooms": "TWO ROOM",
+      "number_beds": "DOUBLE-BED",
+      "night_price": 150.0,
+      "image": "accommodation_images/family_room.jpg",
+      "amenities": [1, 3, 5]
+    }
+  }
+]

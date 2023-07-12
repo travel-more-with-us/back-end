@@ -1,0 +1,47 @@
+[
+  {
+    "model": "TravelMore.ratingdestination",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "star": 1,
+      "destination": 1
+    }
+  },
+  {
+    "model": "TravelMore.ratingdestination",
+    "pk": 2,
+    "fields": {
+      "user": 2,
+      "star": 2,
+      "destination": 2
+    }
+  },
+  {
+    "model": "TravelMore.ratingdestination",
+    "pk": 3,
+    "fields": {
+      "user": 3,
+      "star": 3,
+      "destination": 3
+    }
+  },
+  {
+    "model": "TravelMore.ratingdestination",
+    "pk": 4,
+    "fields": {
+      "user": 2,
+      "star": 4,
+      "destination": 4
+    }
+  },
+  {
+    "model": "TravelMore.ratingdestination",
+    "pk": 5,
+    "fields": {
+      "user": 1,
+      "star": 5,
+      "destination": 5
+    }
+  }
+]

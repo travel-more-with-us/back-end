@@ -1,0 +1,41 @@
+[
+  {
+    "model": "TravelMore.booking",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "arrival_date": "2023-08-15",
+      "departure_date": "2023-08-20",
+      "number_of_guests": 2,
+      "stay": 1,
+      "rooms": 1,
+      "total_price": 500.0
+    }
+  },
+  {
+    "model": "TravelMore.booking",
+    "pk": 2,
+    "fields": {
+      "user": 1,
+      "arrival_date": "2023-09-10",
+      "departure_date": "2023-09-15",
+      "number_of_guests": 3,
+      "stay": 2,
+      "rooms": 2,
+      "total_price": 800.0
+    }
+  },
+  {
+    "model": "TravelMore.booking",
+    "pk": 3,
+    "fields": {
+      "user": 2,
+      "arrival_date": "2023-07-25",
+      "departure_date": "2023-07-30",
+      "number_of_guests": 1,
+      "stay": 3,
+      "rooms": 3,
+      "total_price": 350.0
+    }
+  }
+]

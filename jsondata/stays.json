@@ -1,0 +1,67 @@
+[
+  {
+    "model": "TravelMore.stay",
+    "pk": 1,
+    "fields": {
+      "name": "Hotel Grande",
+      "description": "5 star hotel for those who care about themselves",
+      "address": "123 Main Street",
+      "image": "https://example.com/hotel_image.jpg",
+      "url_map_stay": "https://example.com/hotel_map",
+      "destination": 1,
+      "amenities": [1, 2, 3]
+    }
+  },
+  {
+    "model": "TravelMore.stay",
+    "pk": 2,
+    "fields": {
+      "name": "Resort Touristo",
+      "description": "Come and feel yourself alive",
+      "address": "456 Elm Street",
+      "image": "https://example.com/resort_image.jpg",
+      "url_map_stay": "https://example.com/resort_map",
+      "destination": 2,
+      "amenities": [3, 4, 5]
+    }
+  },
+  {
+    "model": "TravelMore.stay",
+    "pk": 3,
+    "fields": {
+      "name": "Luxury Villa",
+      "description": "Best place to get some rest, recharge and feel free",
+      "address": "12 Palm Street",
+      "image": "https://example.com/resort_image.jpg",
+      "url_map_stay": "https://example.com/resort_map",
+      "destination": 2,
+      "amenities": [1, 4, 5, 2]
+    }
+  },
+  {
+    "model": "TravelMore.stay",
+    "pk": 4,
+    "fields": {
+      "name": "Hotel Magnifico",
+      "description": "Magnificent place with unique atmosphere",
+      "address": "17 Dream Street",
+      "image": "https://example.com/resort_image.jpg",
+      "url_map_stay": "https://example.com/resort_map",
+      "destination": 2,
+      "amenities": [1, 3, 5]
+    }
+  },
+  {
+    "model": "TravelMore.stay",
+    "pk": 5,
+    "fields": {
+      "name": "Holiday Home Slika",
+      "description": "You are our most important guest. Every time.",
+      "address": "Green Boulvard",
+      "image": "https://example.com/resort_image.jpg",
+      "url_map_stay": "https://example.com/resort_map",
+      "destination": 2,
+      "amenities": [3, 4, 5, 7]
+    }
+  }
+]

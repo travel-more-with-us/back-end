@@ -1,0 +1,142 @@
+[
+    {
+        "model": "TravelMore.ratingstar",
+        "pk": 1,
+        "fields": {
+            "value": 1
+        }
+    },
+    {
+        "model": "TravelMore.ratingstar",
+        "pk": 2,
+        "fields": {
+            "value": 2
+        }
+    },
+    {
+        "model": "TravelMore.ratingstar",
+        "pk": 3,
+        "fields": {
+            "value": 3
+        }
+    },
+    {
+        "model": "TravelMore.ratingstar",
+        "pk": 4,
+        "fields": {
+            "value": 4
+        }
+    },
+    {
+        "model": "TravelMore.ratingstar",
+        "pk": 5,
+        "fields": {
+            "value": 5
+        }
+    },
+    {
+        "model": "TravelMore.ratingstar",
+        "pk": 6,
+        "fields": {
+            "value": 1
+        }
+    },
+    {
+        "model": "TravelMore.ratingstar",
+        "pk": 7,
+        "fields": {
+            "value": 2
+        }
+    },
+    {
+        "model": "TravelMore.ratingstar",
+        "pk": 8,
+        "fields": {
+            "value": 3
+        }
+    },
+    {
+        "model": "TravelMore.ratingstar",
+        "pk": 9,
+        "fields": {
+            "value": 4
+        }
+    },
+    {
+        "model": "TravelMore.ratingstar",
+        "pk": 10,
+        "fields": {
+            "value": 5
+        }
+    },
+    {
+          "model": "TravelMore.ratingstar",
+          "pk": 11,
+          "fields": {
+              "value": 1
+          }
+      },
+      {
+          "model": "TravelMore.ratingstar",
+          "pk": 12,
+          "fields": {
+              "value": 2
+          }
+      },
+      {
+          "model": "TravelMore.ratingstar",
+          "pk": 13,
+          "fields": {
+              "value": 3
+          }
+      },
+      {
+          "model": "TravelMore.ratingstar",
+          "pk": 14,
+          "fields": {
+              "value": 4
+          }
+      },
+      {
+          "model": "TravelMore.ratingstar",
+          "pk": 15,
+          "fields": {
+              "value": 5
+          }
+      },
+      {
+          "model": "TravelMore.ratingstar",
+          "pk": 16,
+          "fields": {
+              "value": 1
+          }
+      },
+      {
+          "model": "TravelMore.ratingstar",
+          "pk": 17,
+          "fields": {
+              "value": 2
+          }
+      },
+      {
+          "model": "TravelMore.ratingstar",
+          "pk": 18,
+          "fields": {
+              "value": 3
+          }
+      },
+      {
+          "model": "TravelMore.ratingstar",
+          "pk": 19,
+          "fields": {
+              "value": 4
+          }
+      },
+      {
+          "model": "TravelMore.ratingstar",
+          "pk": 20,
+          "fields": {
+              "value": 5
+          }
+      }
+]

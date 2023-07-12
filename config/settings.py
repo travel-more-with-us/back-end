@@ -105,6 +105,10 @@ DATABASES = {
     }
 }
 
+DEFAULT_FILE_STORAGE = "storages.backends.gcloud.GoogleCloudStorage"
+
+GS_CREDENTIALS = os.path.join(BASE_DIR, "cloud_key.json")
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

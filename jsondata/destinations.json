@@ -1,0 +1,24 @@
+[
+  {
+    "model": "TravelMore.destination",
+    "pk": 1,
+    "fields": {
+      "name": "Antalya",
+      "country": "Turkey",
+      "description": "Antalya - Located on the stunning Turkish Riviera, Antalya is a vibrant coastal city that offers a perfect blend of natural beauty, ancient ruins, and modern attractions. With its picturesque beaches, crystal-clear turquoise waters, and breathtaking mountain scenery, Antalya is a haven for sun-seekers and outdoor enthusiasts. Explore the well-preserved Roman architecture in the historic old town of Kaleiçi, visit the impressive Antalya Museum to delve into the region's rich history, or enjoy the bustling atmosphere of the vibrant marina. With a lively nightlife, delicious local cuisine, and warm Turkish hospitality, Antalya is a captivating destination that caters to all types of travelers.",
+      "image": "https://storage.googleapis.com/travelmore_bucket/destination_images/Antalya.png",
+      "url_map_destination": "https://example.com/antalya"
+    }
+  },
+  {
+    "model": "TravelMore.destination",
+    "pk": 2,
+    "fields": {
+      "name": "Athens",
+      "country": "Greece",
+      "description": "Athens - As the historic capital of Greece, Athens is a city steeped in myth, history, and culture. Home to iconic landmarks like the Acropolis, Parthenon, and Temple of Olympian Zeus, Athens offers a fascinating journey through ancient civilization. Explore the ancient ruins and archaeological sites, wander through the charming Plaka neighborhood with its narrow streets and traditional tavernas, and visit world-class museums like the Acropolis Museum and National Archaeological Museum. Beyond its historical significance, Athens also boasts a vibrant contemporary scene with modern architecture, trendy neighborhoods, art galleries, and a thriving food culture. From ancient wonders to modern delights, Athens is a captivating city that seamlessly blends the past and present.",
+      "image": "https://storage.googleapis.com/travelmore_bucket/destination_images/Athens.png",
+      "url_map_destination": "https://example.com/athens"
+    }
+  }
+]

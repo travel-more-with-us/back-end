@@ -1,0 +1,38 @@
+[
+    {
+        "model": "TravelMore.stayframes",
+        "pk": 1,
+        "fields": {
+            "title": "Deluxe Room",
+            "image": "stay_frames/deluxe-room.jpg",
+            "stays": 1
+        }
+    },
+    {
+        "model": "TravelMore.stayframes",
+        "pk": 2,
+        "fields": {
+            "title": "Ocean View Suite",
+            "image": "stay_frames/ocean-view-suite.jpg",
+            "stays": 1
+        }
+    },
+    {
+        "model": "TravelMore.stayframes",
+        "pk": 3,
+        "fields": {
+            "title": "Family Suite",
+            "image": "stay_frames/family-suite.jpg",
+            "stays": 2
+        }
+    },
+    {
+        "model": "TravelMore.stayframes",
+        "pk": 4,
+        "fields": {
+            "title": "Executive Suite",
+            "image": "stay_frames/executive-suite.jpg",
+            "stays": 2
+        }
+    }
+]

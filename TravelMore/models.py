@@ -6,6 +6,8 @@ from django.db import models
 from django.utils.text import slugify
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.utils import timezone
+from storages.backends.gcloud import GoogleCloudStorage
+from django.conf import settings
 
 
 class Amenity(models.Model):
@@ -19,36 +21,22 @@ class Amenity(models.Model):
         return self.name
 
 
-def destination_image_file_path(instance, filename):
-    _, extension = os.path.splitext(filename)
-    filename = f"{slugify(instance.name)}-{uuid.uuid4()}{extension}"
-
-    return os.path.join("uploads/destinations/", filename)
-
-
 class Destination(models.Model):
     name = models.CharField(max_length=63)
     country = models.CharField(max_length=63)
     description = models.TextField(blank=True)
-    image = models.ImageField(null=True, upload_to=destination_image_file_path)
+    image = models.ImageField(null=True, upload_to="destination_images", storage=GoogleCloudStorage())
     url_map_destination = models.URLField(max_length=255, blank=True)
 
     def __str__(self):
         return f"{self.name}, {self.country}"
 
 
-def stay_image_file_path(instance, filename):
-    _, extension = os.path.splitext(filename)
-    filename = f"{slugify(instance.name)}-{uuid.uuid4()}{extension}"
-
-    return os.path.join("uploads/stays/", filename)
-
-
 class Stay(models.Model):
     name = models.CharField(max_length=63)
     description = models.TextField(blank=True)
     address = models.CharField(max_length=100, blank=True)
-    image = models.ImageField(null=True, upload_to=stay_image_file_path)
+    image = models.ImageField(null=True, upload_to="stay_images", storage=GoogleCloudStorage())
     url_map_stay = models.URLField(max_length=255, blank=True)
     destination = models.ForeignKey(
         Destination, on_delete=models.CASCADE, related_name="stays"
@@ -59,16 +47,9 @@ class Stay(models.Model):
         return self.name
 
 
-def stay_frames_image_file_path(instance, filename):
-    _, extension = os.path.splitext(filename)
-    filename = f"{slugify(instance.title)}-{uuid.uuid4()}{extension}"
-
-    return os.path.join("uploads/stay_frames/", filename)
-
-
 class StayFrames(models.Model):
     title = models.CharField(max_length=255)
-    image = models.ImageField(upload_to=stay_frames_image_file_path, null=True)
+    image = models.ImageField(null=True, upload_to="stay_frames_images", storage=GoogleCloudStorage())
     stays = models.ForeignKey(
         Stay, on_delete=models.CASCADE, related_name="stay_frames"
     )
@@ -164,13 +145,6 @@ class ReviewDestination(models.Model):
         return f"{self.user} - {self.destination}"
 
 
-def room_image_file_path(instance, filename):
-    _, extension = os.path.splitext(filename)
-    filename = f"{slugify(instance.name)}-{uuid.uuid4()}{extension}"
-
-    return os.path.join("uploads/rooms/", filename)
-
-
 class Accommodation(models.Model):
     TYPE_ROOM_CHOICES = (
         ("STANDARD", "standard"),
@@ -208,7 +182,7 @@ class Accommodation(models.Model):
     night_price = models.DecimalField(
         max_digits=8, decimal_places=2, null=True, blank=True
     )
-    image = models.ImageField(null=True, upload_to=room_image_file_path)
+    image = models.ImageField(null=True, upload_to="accommodation_images", storage=GoogleCloudStorage())
     stay = models.ForeignKey(
         Stay,
         on_delete=models.CASCADE,
@@ -233,19 +207,12 @@ class Accommodation(models.Model):
         self.save()
 
 
-def room_frames_image_file_path(instance, filename):
-    _, extension = os.path.splitext(filename)
-    filename = f"{slugify(instance.title)}-{uuid.uuid4()}{extension}"
-
-    return os.path.join("uploads/room_frames/", filename)
-
-
 class AccommodationFrames(models.Model):
     title = models.CharField(max_length=255)
-    image = models.ImageField(upload_to=room_frames_image_file_path, null=True)
     rooms = models.ForeignKey(
         Accommodation, on_delete=models.CASCADE, related_name="room_frames"
     )
+    image = models.ImageField(null=True, upload_to="accommodation_frames_images", storage=GoogleCloudStorage())
 
     class Meta:
         ordering = ("title",)

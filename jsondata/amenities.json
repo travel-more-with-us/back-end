@@ -1,0 +1,65 @@
+[
+    {
+        "model": "TravelMore.amenity",
+        "pk": 1,
+        "fields": {
+            "name": "Free Internet Access"
+        }
+    },
+    {
+        "model": "TravelMore.amenity",
+        "pk": 2,
+        "fields": {
+            "name": "Free Parking"
+        }
+    },
+    {
+        "model": "TravelMore.amenity",
+        "pk": 3,
+        "fields": {
+            "name": "Swimming Pool"
+        }
+    },
+    {
+        "model": "TravelMore.amenity",
+        "pk": 4,
+        "fields": {
+            "name": "Airport Shuttle"
+        }
+    },
+    {
+        "model": "TravelMore.amenity",
+        "pk": 5,
+        "fields": {
+            "name": "Non Smoking Rooms"
+        }
+    },
+    {
+        "model": "TravelMore.amenity",
+        "pk": 6,
+        "fields": {
+            "name": "Restaurants"
+        }
+    },
+    {
+        "model": "TravelMore.amenity",
+        "pk": 7,
+        "fields": {
+            "name": "Beachfront"
+        }
+    },
+    {
+        "model": "TravelMore.amenity",
+        "pk": 8,
+        "fields": {
+            "name": "Fitness Center"
+        }
+    },
+    {
+        "model": "TravelMore.amenity",
+        "pk": 9,
+        "fields": {
+            "name": "Balcony"
+        }
+    }
+]

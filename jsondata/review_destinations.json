@@ -1,0 +1,29 @@
+[
+  {
+    "model": "TravelMore.reviewstay",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "text": "Great stay! Highly recommend.",
+      "stay": 1
+    }
+  },
+  {
+    "model": "TravelMore.reviewstay",
+    "pk": 2,
+    "fields": {
+      "user": 2,
+      "text": "Good experience overall.",
+      "stay": 1
+    }
+  },
+  {
+    "model": "TravelMore.reviewstay",
+    "pk": 3,
+    "fields": {
+      "user": 3,
+      "text": "Not satisfied with the stay.",
+      "stay": 2
+    }
+  }
+]
